@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "watch": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
-    "build": "vite build && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --minify",
+    "build": "vite build && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css",
     "lint": "eslint .",
     "preview": "vite preview"
   },

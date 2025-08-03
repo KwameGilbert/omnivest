@@ -6,7 +6,7 @@ import { Target, Globe, Briefcase } from 'lucide-react';
 
 const BriefAbout = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, threshold: 0.3 });
+    const isInView = useInView(ref, { once: false, threshold: 0.3 });
 
     return (
         <section ref={ref} className="py-20 bg-gray-50">
@@ -20,7 +20,7 @@ const BriefAbout = () => {
                     <motion.h2 
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 1, delay: 0.2 }}
+                        transition={{ duration: 1, delay: 0.3 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-800"
                     >
                         About{' '}
@@ -32,7 +32,7 @@ const BriefAbout = () => {
                     <motion.p 
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 1, delay: 0.4 }}
+                        transition={{ duration: 1, delay: 0.5 }}
                         className="text-xl text-gray-600 leading-relaxed"
                     >
                         Omnivest Education Consult is your trusted partner in international education. 
@@ -44,7 +44,7 @@ const BriefAbout = () => {
                     <motion.div 
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 1, delay: 0.6 }}
+                        transition={{ duration: 1, delay: 0.8 }}
                         className="grid md:grid-cols-3 gap-8 pt-8"
                     >
                         <div className="text-center">
