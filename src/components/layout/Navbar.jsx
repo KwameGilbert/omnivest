@@ -16,7 +16,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-gradient-to-r from-indigo-800 via-indigo-700 to-purple-800 text-white shadow-lg backdrop-blur-lg border-b border-white border-opacity-10"
+      className="bg-white text-gray-800 shadow-lg backdrop-blur-lg border-b border-gray-200"
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -41,12 +41,12 @@ const Navbar = () => {
                 )}
                 <div className="flex flex-col">
                   <h1 className="text-xl font-bold">
-                    <span className="text-blue-400">Omni</span>
-                    <span className="bg-gradient-to-r from-purple-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
+                    <span className="text-indigo-600">Omni</span>
+                    <span className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-500 bg-clip-text text-transparent">
                       vest
                     </span>
                   </h1>
-                  <p className="text-xs text-blue-200 italic">Your Journey, Our Mission</p>
+                  <p className="text-xs text-gray-600 italic">Your Journey, Our Mission</p>
                 </div>
               </div>
             </Link>
@@ -58,10 +58,10 @@ const Navbar = () => {
               <motion.div whileHover={{ y: -2 }}>
                 <Link
                   to="/"
-                  className="hover:text-yellow-300 transition-colors duration-300 relative group"
+                  className="hover:text-indigo-600 transition-colors duration-300 relative group"
                 >
                   Home
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             </li>
@@ -69,10 +69,10 @@ const Navbar = () => {
               <motion.div whileHover={{ y: -2 }}>
                 <Link
                   to="/about"
-                  className="hover:text-yellow-300 transition-colors duration-300 relative group"
+                  className="hover:text-indigo-600 transition-colors duration-300 relative group"
                 >
                   About
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             </li>
@@ -80,10 +80,10 @@ const Navbar = () => {
               <motion.div whileHover={{ y: -2 }}>
                 <Link
                   to="/services"
-                  className="hover:text-yellow-300 transition-colors duration-300 relative group"
+                  className="hover:text-indigo-600 transition-colors duration-300 relative group"
                 >
                   Services
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             </li>
@@ -91,10 +91,10 @@ const Navbar = () => {
               <motion.div whileHover={{ y: -2 }}>
                 <Link
                   to="/packages"
-                  className="hover:text-yellow-300 transition-colors duration-300 relative group"
+                  className="hover:text-indigo-600 transition-colors duration-300 relative group"
                 >
                   Packages
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             </li>
@@ -102,10 +102,10 @@ const Navbar = () => {
               <motion.div whileHover={{ y: -2 }}>
                 <Link
                   to="/contact"
-                  className="hover:text-yellow-300 transition-colors duration-300 relative group"
+                  className="hover:text-indigo-600 transition-colors duration-300 relative group"
                 >
                   Contact
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             </li>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300"
               >
                 Get Started
               </motion.button>
@@ -125,7 +125,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleMenu}
-            className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors"
+            className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -145,7 +145,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-indigo-900 bg-opacity-95 backdrop-blur-lg border-t border-white border-opacity-10"
+            className="md:hidden bg-gray-50 backdrop-blur-lg border-t border-gray-200"
           >
             <ul className="flex flex-col px-4 py-6 space-y-4 font-medium">
               <motion.li
@@ -156,7 +156,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 hover:text-yellow-300 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300"
                 >
                   Home
                 </Link>
@@ -169,7 +169,7 @@ const Navbar = () => {
                 <Link
                   to="/about"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 hover:text-yellow-300 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300"
                 >
                   About
                 </Link>
@@ -182,7 +182,7 @@ const Navbar = () => {
                 <Link
                   to="/services"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 hover:text-yellow-300 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300"
                 >
                   Services
                 </Link>
@@ -195,7 +195,7 @@ const Navbar = () => {
                 <Link
                   to="/packages"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 hover:text-yellow-300 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300"
                 >
                   Packages
                 </Link>
@@ -208,7 +208,7 @@ const Navbar = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 hover:text-yellow-300 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300"
                 >
                   Contact
                 </Link>
@@ -220,7 +220,7 @@ const Navbar = () => {
               >
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-3 px-4 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300"
                 >
                   Get Started
                 </button>
