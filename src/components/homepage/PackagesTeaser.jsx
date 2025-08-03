@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { CheckCircle, Star, ArrowRight } from 'lucide-react';
+import { CheckCircle, Star, ArrowRight, Zap, Crown } from 'lucide-react';
 
 const PackagesTeaser = () => {
     const ref = useRef(null);
@@ -10,51 +10,54 @@ const PackagesTeaser = () => {
 
     const packages = [
         {
-            name: "Basic Consultation",
-            price: "$299",
-            duration: "1 Month",
+            name: "Basic",
+            subtitle: "Get Me In",
+            price: "Contact for Pricing",
+            duration: "3-4 Months",
             popular: false,
             features: [
-                "University Selection Guidance",
-                "Application Review",
-                "Basic Document Preparation",
-                "Email Support",
-                "1 Video Consultation"
+                "Career Counseling",
+                "University Selection & Application",
+                "SOP/Essay Guidance",
+                "Document Checklist",
+                "Scholarship Suggestions"
             ],
-            color: "from-gray-500 to-gray-600"
+            color: "from-green-500 to-green-600",
+            icon: <CheckCircle className="w-6 h-6" />
         },
         {
-            name: "Premium Package",
-            price: "$799",
-            duration: "6 Months",
+            name: "Standard",
+            subtitle: "Ready to Fly",
+            price: "Contact for Pricing",
+            duration: "4-5 Months",
             popular: true,
             features: [
-                "Complete Application Support",
-                "Visa Assistance",
-                "Scholarship Guidance",
-                "Interview Preparation",
-                "Pre-departure Orientation",
-                "24/7 Support",
-                "5 Video Consultations"
+                "Everything in Basic, plus:",
+                "Visa Support",
+                "Accommodation Help",
+                "Pre-departure Briefing",
+                "Flight Booking",
+                "Basic Test Prep Advice"
             ],
-            color: "from-indigo-500 to-purple-600"
+            color: "from-blue-500 to-blue-600",
+            icon: <Zap className="w-6 h-6" />
         },
         {
-            name: "VIP Package",
-            price: "$1,499",
-            duration: "12 Months",
+            name: "Premium",
+            subtitle: "Settle Me Abroad",
+            price: "Contact for Pricing",
+            duration: "5-6 Months",
             popular: false,
             features: [
-                "End-to-end Support",
-                "Guaranteed Admission*",
-                "Financial Planning",
-                "Accommodation Support",
-                "Career Guidance",
-                "Alumni Network Access",
-                "Unlimited Consultations",
-                "Personal Advisor"
+                "Everything in Standard, plus:",
+                "Airport Pickup Coordination",
+                "SIM/Bank Setup Advice",
+                "Post-Arrival Support",
+                "Health Insurance Guidance",
+                "Alumni Mentorship"
             ],
-            color: "from-yellow-500 to-orange-500"
+            color: "from-purple-500 to-purple-600",
+            icon: <Crown className="w-6 h-6" />
         }
     ];
 
@@ -113,10 +116,14 @@ const PackagesTeaser = () => {
                             <div className={`${pkg.popular ? 'pt-12' : 'pt-8'} px-8 pb-8`}>
                                 {/* Package Header */}
                                 <div className="text-center mb-8">
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                                    <div className="flex items-center justify-center space-x-2">
-                                        <span className="text-4xl font-bold text-gray-800">{pkg.price}</span>
-                                        <span className="text-gray-600">/ {pkg.duration}</span>
+                                    <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-r ${pkg.color} rounded-xl flex items-center justify-center text-white`}>
+                                        {pkg.icon}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-1">{pkg.name}</h3>
+                                    <p className="text-lg text-gray-600 mb-3">"{pkg.subtitle}"</p>
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-2xl font-bold text-gray-800">{pkg.price}</span>
+                                        <span className="text-gray-600">{pkg.duration}</span>
                                     </div>
                                 </div>
 

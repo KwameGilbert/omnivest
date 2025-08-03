@@ -26,26 +26,28 @@ const Navbar = () => {
             className="flex items-center space-x-3"
           >
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-16 h-16 flex items-center justify-center">
+              <div className="flex items-center space-x-3">
                 {logoError ? (
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-orange-500 rounded-lg flex items-center justify-center font-bold text-white text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-orange-500 rounded-lg flex items-center justify-center font-bold text-white text-lg">
                     O
                   </div>
                 ) : (
                   <img
-                    src="/images/ominivest.png"
+                    src="/omnivest-logo.png"
                     alt="Omnivest Logo"
-                    className="w-full h-full object-contain"
+                    className="w-12 h-12 object-contain"
                     onError={() => setLogoError(true)}
                   />
                 )}
-
-                <h1 className="text-2xl font-bold">
-                  <span className="text-blue-400">omni</span>
-                  <span className="bg-gradient-to-r from-purple-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
-                    vest
-                  </span>
-                </h1>
+                <div className="flex flex-col">
+                  <h1 className="text-xl font-bold">
+                    <span className="text-blue-400">Omni</span>
+                    <span className="bg-gradient-to-r from-purple-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
+                      vest
+                    </span>
+                  </h1>
+                  <p className="text-xs text-blue-200 italic">Your Journey, Our Mission</p>
+                </div>
               </div>
             </Link>
           </motion.div>

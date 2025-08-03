@@ -2,47 +2,47 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, FileText, Plane, DollarSign, Users, HeadphonesIcon } from 'lucide-react';
+import { GraduationCap, FileText, Plane, Home, MapPin, Users } from 'lucide-react';
 
 const ServicesPreview = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, threshold: 0.3 });
+    const isInView = useInView(ref, { once: false, threshold: 0.3 });
 
     const services = [
         {
-            icon: <GraduationCap className="w-8 h-8" />,
-            title: "University Selection",
-            description: "Expert guidance in choosing the right university and program for your goals.",
+            icon: <Users className="w-8 h-8" />,
+            title: "Career Counseling",
+            description: "Helping students identify the right path based on passion, strength, and goals.",
             color: "from-blue-500 to-blue-600"
         },
         {
-            icon: <FileText className="w-8 h-8" />,
-            title: "Application Support",
-            description: "Complete assistance with application processes and documentation.",
+            icon: <GraduationCap className="w-8 h-8" />,
+            title: "University Application",
+            description: "School selection, documentation, and deadline management.",
             color: "from-green-500 to-green-600"
         },
         {
             icon: <Plane className="w-8 h-8" />,
-            title: "Visa Assistance",
-            description: "Streamlined visa application process with high success rates.",
+            title: "Visa Application",
+            description: "End-to-end visa support, including coaching and paperwork help.",
             color: "from-purple-500 to-purple-600"
         },
         {
-            icon: <DollarSign className="w-8 h-8" />,
-            title: "Financial Planning",
-            description: "Smart investment solutions and scholarship guidance.",
+            icon: <Home className="w-8 h-8" />,
+            title: "Accommodation",
+            description: "Safe and budget-friendly housing options arranged before departure.",
             color: "from-yellow-500 to-orange-500"
         },
         {
-            icon: <Users className="w-8 h-8" />,
-            title: "Pre-Departure",
-            description: "Comprehensive orientation and preparation for your journey.",
+            icon: <FileText className="w-8 h-8" />,
+            title: "Pre-Departure Briefing",
+            description: "Travel checklists, cultural insights, and settling-in guidance.",
             color: "from-red-500 to-pink-500"
         },
         {
-            icon: <HeadphonesIcon className="w-8 h-8" />,
-            title: "Ongoing Support",
-            description: "Continuous support throughout your academic journey abroad.",
+            icon: <MapPin className="w-8 h-8" />,
+            title: "Flight Arrangement",
+            description: "Booking assistance with student-friendly pricing.",
             color: "from-indigo-500 to-purple-500"
         }
     ];

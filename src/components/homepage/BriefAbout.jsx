@@ -33,13 +33,25 @@ const BriefAbout = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="text-xl text-gray-600 leading-relaxed"
+                        className="text-xl text-gray-600 leading-relaxed mb-6"
                     >
-                        Omnivest Education Consult is your trusted partner in international education. 
-                        With over a decade of experience, we've helped thousands of students achieve 
-                        their dreams of studying abroad while providing smart investment solutions 
-                        for their educational journey.
+                        <strong className="text-indigo-600">Your Journey, Our Mission</strong> - Omnivest is your trusted partner in international education, 
+                        empowering students globally through access to quality education and lifelong support.
                     </motion.p>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, delay: 0.7 }}
+                        className="bg-white p-6 rounded-xl shadow-lg mb-8"
+                    >
+                        <h3 className="text-2xl font-bold text-indigo-600 mb-4">Our Mission</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                            To support students at every step of their international education journey — career guidance, 
+                            school selection, application, visa, accommodation, and settling abroad — using transparent, 
+                            expert-led, and personalized services.
+                        </p>
+                    </motion.div>
                     
                     <motion.div 
                         initial={{ opacity: 0, y: 30 }}

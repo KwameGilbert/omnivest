@@ -5,7 +5,9 @@ import WhyStudyAbroad from './../../components/homepage/WhyStudyAbroad';
 import ServicesPreview from './../../components/homepage/ServicesPreview';
 import PopularDestinations from './../../components/homepage/PopularDestinations';
 import PackagesTeaser from './../../components/homepage/PackagesTeaser';
+import AddOnServices from './../../components/homepage/AddOnServices';
 import TestimonialCarousel from './../../components/homepage/TestimonialCarousel';
+import FAQSection from './../../components/homepage/FAQSection';
 import CallToAction from './../../components/homepage/CallToAction';
 
 const Homepage = () => {
@@ -17,7 +19,9 @@ const Homepage = () => {
             <ServicesPreview />
             <PopularDestinations />
             <PackagesTeaser />
+            <AddOnServices />
             <TestimonialCarousel />
+            <FAQSection />
             <CallToAction />
         </div>
     );

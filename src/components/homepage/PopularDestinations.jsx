@@ -55,6 +55,24 @@ const PopularDestinations = () => {
             highlights: ["Engineering Excellence", "Low Tuition", "Strong Economy"]
         },
         {
+            country: "Ireland",
+            flag: "🇮🇪",
+            universities: "60+",
+            students: "600+",
+            rating: 4.7,
+            image: "bg-gradient-to-br from-green-500 to-orange-500",
+            highlights: ["Tech Hub", "English Speaking", "EU Access"]
+        },
+        {
+            country: "Netherlands",
+            flag: "🇳🇱",
+            universities: "75+",
+            students: "700+",
+            rating: 4.8,
+            image: "bg-gradient-to-br from-orange-500 to-red-500",
+            highlights: ["Innovation Hub", "Bicycle Culture", "International Environment"]
+        },
+        {
             country: "New Zealand",
             flag: "🇳🇿",
             universities: "80+",
