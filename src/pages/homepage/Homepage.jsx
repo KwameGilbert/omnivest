@@ -17,11 +17,11 @@ const Homepage = () => {
             <BriefAbout />
             <WhyStudyAbroad />
             <ServicesPreview />
-            <PopularDestinations />
+            // <PopularDestinations />
             <PackagesTeaser />
             <AddOnServices />
             <TestimonialCarousel />
-            <FAQSection />
+            // <FAQSection />
             <CallToAction />
         </div>
     );
