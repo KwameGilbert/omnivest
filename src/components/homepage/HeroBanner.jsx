@@ -63,8 +63,8 @@ const HeroBanner = () => {
                                         transition={{ duration: 0.8, delay: 0.4 }}
                                         className="text-xl text-gray-200 leading-relaxed min-h-[4.5rem]"
                                     >
-                                        Transform your dreams into reality with expert guidance for studying abroad. 
-                                        We provide comprehensive education consulting and investment solutions.
+                                        Empowering students globally through access to quality education and lifelong support. 
+                                        We support you at every step - from career guidance to settling abroad.
                                     </motion.p>
                                     
                                     <motion.div 
