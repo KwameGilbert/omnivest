@@ -18,7 +18,7 @@ const BriefAbout = () => {
                     className="max-w-4xl mx-auto text-center space-y-8"
                 >
                     <motion.h2 
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: -30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, delay: 0.3 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-800"
@@ -30,22 +30,22 @@ const BriefAbout = () => {
                     </motion.h2>
                     
                     <motion.p 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="text-xl text-gray-600 leading-relaxed mb-6"
+                        className="text-xl text-gray-700 leading-relaxed mb-6"
                     >
                         <strong className="text-indigo-600">Your Journey, Our Mission</strong> - Omnivest is your trusted partner in international education, 
                         empowering students globally through access to quality education and lifelong support.
                     </motion.p>
                     
                     <motion.div 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 1, delay: 0.7 }}
-                        className="bg-white p-6 rounded-xl shadow-lg mb-8"
+                        className="bg-white p-6 rounded-xl shadow-lg mb-8 border-l-4 border-indigo-500"
                     >
-                        <h3 className="text-2xl font-bold text-indigo-600 mb-4">Our Mission</h3>
+                        <h3 className="text-2xl font-bold text-purple-600 mb-4">Our Mission</h3>
                         <p className="text-gray-700 leading-relaxed">
                             To support students at every step of their international education journey — career guidance, 
                             school selection, application, visa, accommodation, and settling abroad — using transparent, 
@@ -62,7 +62,7 @@ const BriefAbout = () => {
                         <div className="text-center">
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                                className="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4"
                             >
                                 <Target className="w-8 h-8" />
                             </motion.div>
@@ -73,7 +73,7 @@ const BriefAbout = () => {
                         <div className="text-center">
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                                className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"
                             >
                                 <Globe className="w-8 h-8" />
                             </motion.div>
@@ -84,7 +84,7 @@ const BriefAbout = () => {
                         <div className="text-center">
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                                className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
                             >
                                 <Briefcase className="w-8 h-8" />
                             </motion.div>

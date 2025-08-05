@@ -6,7 +6,7 @@ import { Globe, BookOpen, Users, Trophy } from 'lucide-react';
 
 const WhyStudyAbroad = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, threshold: 0.3 });
+    const isInView = useInView(ref, { once: false, threshold: 0.3 });
 
     const benefits = [
         {
@@ -32,7 +32,7 @@ const WhyStudyAbroad = () => {
     ];
 
     return (
-        <section ref={ref} className="py-20 bg-white">
+        <section ref={ref} className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -41,8 +41,8 @@ const WhyStudyAbroad = () => {
                     className="text-center mb-16"
                 >
                     <motion.h2 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6"
                     >
@@ -53,8 +53,8 @@ const WhyStudyAbroad = () => {
                     </motion.h2>
                     
                     <motion.p 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-xl text-gray-600 max-w-3xl mx-auto"
                     >
@@ -67,15 +67,15 @@ const WhyStudyAbroad = () => {
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -20 : 20 }}
+                            animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow"
+                            whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.2)" }}
+                            className="text-center p-6 rounded-xl hover:shadow-lg transition-all bg-white"
                         >
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: 5 }}
-                                className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-6"
+                                className="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md shadow-indigo-200"
                             >
                                 {benefit.icon}
                             </motion.div>
@@ -99,9 +99,9 @@ const WhyStudyAbroad = () => {
                     className="text-center mt-16"
                 >
                     <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.4)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
+                        className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all"
                     >
                         Start Your Journey Today
                     </motion.button>

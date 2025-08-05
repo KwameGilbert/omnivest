@@ -69,7 +69,7 @@ const FAQSection = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white"
+                        className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-white"
                     >
                         <HelpCircle className="w-8 h-8" />
                     </motion.div>

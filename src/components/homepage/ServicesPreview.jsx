@@ -13,19 +13,19 @@ const ServicesPreview = () => {
             icon: <Users className="w-8 h-8" />,
             title: "Career Counseling",
             description: "Helping students identify the right path based on passion, strength, and goals.",
-            color: "from-blue-500 to-blue-600"
+            color: "from-yellow-400 to-orange-500"
         },
         {
             icon: <GraduationCap className="w-8 h-8" />,
             title: "University Application",
             description: "School selection, documentation, and deadline management.",
-            color: "from-green-500 to-green-600"
+            color: "from-orange-400 to-orange-600"
         },
         {
             icon: <Plane className="w-8 h-8" />,
             title: "Visa Application",
             description: "End-to-end visa support, including coaching and paperwork help.",
-            color: "from-purple-500 to-purple-600"
+            color: "from-blue-500 to-blue-700"
         },
         {
             icon: <Home className="w-8 h-8" />,
@@ -37,13 +37,13 @@ const ServicesPreview = () => {
             icon: <FileText className="w-8 h-8" />,
             title: "Pre-Departure Briefing",
             description: "Travel checklists, cultural insights, and settling-in guidance.",
-            color: "from-red-500 to-pink-500"
+            color: "from-orange-400 to-orange-600"
         },
         {
             icon: <MapPin className="w-8 h-8" />,
             title: "Flight Arrangement",
             description: "Booking assistance with student-friendly pricing.",
-            color: "from-indigo-500 to-purple-500"
+            color: "from-blue-500 to-blue-700"
         }
     ];
 
@@ -63,7 +63,7 @@ const ServicesPreview = () => {
                         className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6"
                     >
                         Our{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
                             Services
                         </span>
                     </motion.h2>
