@@ -9,11 +9,11 @@ const CallToAction = () => {
     const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
     return (
-        <section ref={ref} className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 text-white relative overflow-hidden">
+        <section ref={ref} className="py-20 bg-gradient-to-br from-indigo-800 via-purple-800 to-indigo-700 text-white relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-yellow-300 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-300 rounded-full blur-3xl"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-300 rounded-full blur-3xl"></div>
             </div>
 
@@ -31,7 +31,7 @@ const CallToAction = () => {
                         className="text-4xl lg:text-6xl font-bold mb-6"
                     >
                         Ready to Start Your{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">
                             Journey?
                         </span>
                     </motion.h2>

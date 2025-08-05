@@ -12,16 +12,16 @@ import CallToAction from './../../components/homepage/CallToAction';
 
 const Homepage = () => {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-gray-50">
             <HeroBanner />
             <BriefAbout />
             <WhyStudyAbroad />
             <ServicesPreview />
-            // <PopularDestinations />
+            <PopularDestinations />
             <PackagesTeaser />
             <AddOnServices />
             <TestimonialCarousel />
-            // <FAQSection />
+            <FAQSection />
             <CallToAction />
         </div>
     );

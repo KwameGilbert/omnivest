@@ -82,7 +82,7 @@ const HeroBanner = () => {
     }, [imagesLoaded, backgroundImages.length]);
 
     return (
-        <section className="relative bg-blue-100 text-white min-h-[80vh] flex items-center overflow-hidden">
+        <section className="relative bg-gray-50 text-white min-h-[80vh] flex items-center overflow-hidden">
             {/* Multiple Background Images with Blending Transition and Pan/Zoom */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence>
@@ -110,7 +110,9 @@ const HeroBanner = () => {
                         )
                     ))}
                 </AnimatePresence>
-                <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
+                <div className="absolute inset-0" style={{ 
+                    background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.30) 0%, rgba(124, 58, 237, 0.30) 100%)' 
+                }}></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10 py-20 text-center">
@@ -121,18 +123,18 @@ const HeroBanner = () => {
                     className="max-w-3xl mx-auto space-y-6"
                 >
                     <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl lg:text-4xl font-bold leading-tight h-[4.5rem]"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, type: "spring", stiffness: 100 }}
+                        className="text-4xl lg:text-5xl font-bold leading-tight h-[4.5rem]"
                     >
-                        <span ref={typedRef}></span>
+                        <span ref={typedRef} className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-purple-100"></span>
                     </motion.h1>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1.2, delay: 0.3, type: "spring", damping: 10 }}
                         className="text-base md:text-lg text-gray-100 leading-relaxed max-w-2xl mx-auto"
                     >
                         Omnivest guides the brightest minds to world-class universities and elite destinations.
@@ -143,23 +145,29 @@ const HeroBanner = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex flex-col sm:flex-row justify-center gap-4 pt-6"
                     >
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(124, 58, 237, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
+                            className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all"
                         >
                             Our services
                         </motion.button>
 
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(168, 85, 247, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="border-2 border-white bg-transparent text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white hover:text-gray-900 transition-colors"
+                            className="border-2 border-purple-400 bg-transparent text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-purple-600 hover:border-purple-600 transition-all"
                         >
-                            Learn more
+                            Learn more <ArrowRight className="w-4 h-4" />
                         </motion.button>
                     </motion.div>
                 </motion.div>
