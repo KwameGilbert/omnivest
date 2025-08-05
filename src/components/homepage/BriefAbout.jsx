@@ -6,7 +6,7 @@ import { Target, Globe, Briefcase } from 'lucide-react';
 
 const BriefAbout = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, threshold: 0.3 });
+    const isInView = useInView(ref, { once: false, threshold: 0.5 });
 
     return (
         <section ref={ref} className="py-20 bg-gray-50">
@@ -20,7 +20,7 @@ const BriefAbout = () => {
                     <motion.h2 
                         initial={{ opacity: 0, y: -30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 1, delay: 0.3 }}
+                        transition={{ duration: 1, delay: 0.5 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-800"
                     >
                         About{' '}

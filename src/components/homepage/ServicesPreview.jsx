@@ -13,37 +13,37 @@ const ServicesPreview = () => {
             icon: <Users className="w-8 h-8" />,
             title: "Career Counseling",
             description: "Helping students identify the right path based on passion, strength, and goals.",
-            color: "from-yellow-400 to-orange-500"
+            color: "from-indigo-500 to-indigo-600"
         },
         {
             icon: <GraduationCap className="w-8 h-8" />,
             title: "University Application",
             description: "School selection, documentation, and deadline management.",
-            color: "from-orange-400 to-orange-600"
+            color: "from-purple-500 to-purple-600"
         },
         {
             icon: <Plane className="w-8 h-8" />,
             title: "Visa Application",
             description: "End-to-end visa support, including coaching and paperwork help.",
-            color: "from-blue-500 to-blue-700"
+            color: "from-indigo-500 to-indigo-600"
         },
         {
             icon: <Home className="w-8 h-8" />,
             title: "Accommodation",
             description: "Safe and budget-friendly housing options arranged before departure.",
-            color: "from-yellow-500 to-orange-500"
+            color: "from-purple-500 to-purple-600"
         },
         {
             icon: <FileText className="w-8 h-8" />,
             title: "Pre-Departure Briefing",
             description: "Travel checklists, cultural insights, and settling-in guidance.",
-            color: "from-orange-400 to-orange-600"
+            color: "from-indigo-500 to-indigo-600"
         },
         {
             icon: <MapPin className="w-8 h-8" />,
             title: "Flight Arrangement",
             description: "Booking assistance with student-friendly pricing.",
-            color: "from-blue-500 to-blue-700"
+            color: "from-purple-500 to-purple-600"
         }
     ];
 
@@ -57,13 +57,13 @@ const ServicesPreview = () => {
                     className="text-center mb-16"
                 >
                     <motion.h2 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6"
                     >
                         Our{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
                             Services
                         </span>
                     </motion.h2>
@@ -83,11 +83,11 @@ const ServicesPreview = () => {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -20 : 20 }}
+                            animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.02 }}
-                            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                            whileHover={{ y: -10, scale: 1.02, boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.2)" }}
+                            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all"
                         >
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: 5 }}
