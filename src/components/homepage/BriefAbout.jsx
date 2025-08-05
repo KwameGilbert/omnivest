@@ -59,38 +59,53 @@ const BriefAbout = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                         className="grid md:grid-cols-3 gap-8 pt-8"
                     >
-                        <div className="text-center">
+                        <motion.div 
+                            className="text-center"
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                        >
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
                             >
                                 <Target className="w-8 h-8" />
                             </motion.div>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">Expert Guidance</h3>
                             <p className="text-gray-600">Personalized counseling from certified education consultants</p>
-                        </div>
+                        </motion.div>
                         
-                        <div className="text-center">
+                        <motion.div 
+                            className="text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.8, delay: 0.7 }}
+                        >
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"
+                                whileHover={{ scale: 1.1, rotate: -5 }}
+                                className="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
                             >
                                 <Globe className="w-8 h-8" />
                             </motion.div>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">Global Network</h3>
                             <p className="text-gray-600">Partnerships with top universities worldwide</p>
-                        </div>
+                        </motion.div>
                         
-                        <div className="text-center">
+                        <motion.div 
+                            className="text-center"
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                        >
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
-                                className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
                             >
                                 <Briefcase className="w-8 h-8" />
                             </motion.div>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">Investment Solutions</h3>
                             <p className="text-gray-600">Smart financial planning for your education</p>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
