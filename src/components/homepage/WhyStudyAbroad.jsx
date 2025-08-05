@@ -6,7 +6,7 @@ import { Globe, BookOpen, Users, Trophy } from 'lucide-react';
 
 const WhyStudyAbroad = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, threshold: 0.3 });
+    const isInView = useInView(ref, { once: false, threshold: 0.3 }); // Adjust threshold as needed for when animation triggers
 
     const benefits = [
         {
@@ -32,7 +32,7 @@ const WhyStudyAbroad = () => {
     ];
 
     return (
-        <section ref={ref} className="py-20 bg-gray-50">
+        <section ref={ref} className="py-20 bg-gray-900 text-gray-100"> {/* Changed background and default text color */}
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -40,25 +40,25 @@ const WhyStudyAbroad = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6"
+                        className="text-4xl lg:text-5xl font-bold text-gray-100 mb-6" // Changed text color
                     >
                         Why Study{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300"> {/* Updated gradient */}
                             Abroad?
                         </span>
                     </motion.h2>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0, x: 30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl text-gray-600 max-w-3xl mx-auto"
+                        className="text-xl text-gray-300 max-w-3xl mx-auto" // Changed text color
                     >
-                        Studying abroad is more than just getting a degree—it's a transformative 
+                        Studying abroad is more than just getting a degree—it's a transformative
                         experience that shapes your future and opens doors to endless possibilities.
                     </motion.p>
                 </motion.div>
@@ -69,22 +69,24 @@ const WhyStudyAbroad = () => {
                             key={index}
                             initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -20 : 20 }}
                             animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
-                            transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                            whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.2)" }}
-                            className="text-center p-6 rounded-xl hover:shadow-lg transition-all bg-white"
+                            transition={{ duration: 0.8, delay: 0.2 + index * 0.1, type: "spring", stiffness: 100 }} // Diversified animation delay and added spring type
+                            whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(251, 146, 60, 0.2)" }} // Updated shadow color
+                            className="text-center p-6 rounded-xl hover:shadow-lg transition-all bg-gray-800" // Changed background
                         >
                             <motion.div
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                className="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md shadow-indigo-200"
+                                whileHover={{ scale: 1.1, rotate: index % 2 === 0 ? 5 : -5 }} // Alternating rotation on hover
+                                className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md 
+                                    ${index === 0 || index === 3 ? 'bg-orange-200 text-orange-700 shadow-orange-700/20' : 'bg-yellow-200 text-yellow-700 shadow-yellow-700/20'}`}
+                              
                             >
                                 {benefit.icon}
                             </motion.div>
-                            
-                            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+
+                            <h3 className="text-xl font-semibold text-gray-100 mb-4"> {/* Changed text color */}
                                 {benefit.title}
                             </h3>
-                            
-                            <p className="text-gray-600">
+
+                            <p className="text-gray-300"> {/* Changed text color */}
                                 {benefit.description}
                             </p>
                         </motion.div>
@@ -92,16 +94,16 @@ const WhyStudyAbroad = () => {
                 </div>
 
                 {/* Call to Action */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="text-center mt-16"
                 >
                     <motion.button
-                        whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.4)" }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(251, 146, 60, 0.4)" }} // Updated shadow color
                         whileTap={{ scale: 0.95 }}
-                        className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all"
+                        className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all" // Updated gradient and shadow
                     >
                         Start Your Journey Today
                     </motion.button>

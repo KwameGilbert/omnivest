@@ -82,7 +82,7 @@ const HeroBanner = () => {
     }, [imagesLoaded, backgroundImages.length]);
 
     return (
-        <section className="relative bg-gray-50 text-white min-h-[80vh] flex items-center overflow-hidden">
+        <section className="relative bg-gray-900 text-white min-h-[80vh] flex items-center overflow-hidden">
             {/* Multiple Background Images with Blending Transition and Pan/Zoom */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence>
@@ -110,8 +110,8 @@ const HeroBanner = () => {
                         )
                     ))}
                 </AnimatePresence>
-                <div className="absolute inset-0" style={{ 
-                    background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.30) 0%, rgba(124, 58, 237, 0.30) 100%)' 
+                <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.40) 0%, rgba(253, 224, 71, 0.30) 100%)'
                 }}></div>
             </div>
 
@@ -128,7 +128,7 @@ const HeroBanner = () => {
                         transition={{ duration: 1, type: "spring", stiffness: 100 }}
                         className="text-4xl lg:text-5xl font-bold leading-tight h-[4.5rem]"
                     >
-                        <span ref={typedRef} className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-purple-100"></span>
+                        <span ref={typedRef} className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-yellow-200"></span>
                     </motion.h1>
 
                     <motion.p
@@ -152,9 +152,9 @@ const HeroBanner = () => {
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
-                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(124, 58, 237, 0.3)" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(251, 146, 60, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all"
+                            className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-orange-600"
                         >
                             Our services
                         </motion.button>
@@ -163,9 +163,9 @@ const HeroBanner = () => {
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
-                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(168, 85, 247, 0.3)" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(253, 224, 71, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="border-2 border-purple-400 bg-transparent text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-purple-600 hover:border-purple-600 transition-all"
+                            className="border-2 border-yellow-300 bg-transparent text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-400 hover:border-yellow-400 hover:text-gray-900 transition-all"
                         >
                             Learn more <ArrowRight className="w-4 h-4" />
                         </motion.button>
