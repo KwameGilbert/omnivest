@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Analytics } from "@vercel/analytics/next"
 import Navbar from '../layout/Navbar';
+import WhatsAppButton from '../layout/WhatsAppButton';
 import Footer from '../layout/Footer';
 
 const MainLayout = ({ children }) => {
@@ -10,6 +11,7 @@ const MainLayout = ({ children }) => {
             <main className="flex-grow">
                 {children}
             </main>
+            <WhatsAppButton />
             <Footer />
         </div>
     );
