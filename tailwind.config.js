@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
     content: [
         "./index.html",
         "./src/**/*.{html,js,ts,jsx,tsx}",
@@ -7,9 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'harmony-dark-green': '#093C2B',
-                'harmony-light-tan': '#E3D5CA',
-                'harmony-red': '#FF2E31',
+                'harmony-light': '#f8f9fd',
+                'harmony-dark': '#171d29',
+                'harmony-green': '#23c55e',
                 'harmony-orange': '#FF9A2E',
             },
         },

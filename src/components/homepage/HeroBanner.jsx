@@ -76,30 +76,30 @@ const HeroBanner = () => {
             setCurrentImageIndex((prevIndex) =>
                 (prevIndex + 1) % backgroundImages.length
             );
-        }, 8000); // Increased interval to 8 seconds
+        }, 8000);
 
         return () => clearInterval(interval);
     }, [imagesLoaded, backgroundImages.length]);
 
     return (
-        <section className="relative bg-gray-900 text-white min-h-[80vh] flex items-center overflow-hidden">
-            {/* Multiple Background Images with Blending Transition and Pan/Zoom */}
+        <section className="relative bg-[#111827] text-[#f3f4f6] min-h-[80vh] flex items-center overflow-hidden font-['Inter']">
+            {/* Background Images with Dark Overlay */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence>
-                    {backgroundImages.map((image, index) => (
+                    {imagesLoaded && backgroundImages.map((image, index) => (
                         index === currentImageIndex && (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0.2, scale: 1, x: 0, y: 0 }} // Start at scale 1 and initial position
-                                animate={{ opacity: 1, scale: 1.3, x: [0, -10, 0], y: [0, 5, 0] }} // Pan and zoom over the duration
+                                initial={{ opacity: 0.2, scale: 1, x: 0, y: 0 }}
+                                animate={{ opacity: 1, scale: 1.3, x: [0, -10, 0], y: [0, 5, 0] }}
                                 exit={{ opacity: 0.0, scale: 1.0 }}
                                 transition={{
                                     opacity: { duration: 2 },
-                                    scale: { duration: 8, ease: "easeInOut" }, // Match scale duration to interval
-                                    x: { duration: 8, ease: "easeInOut" }, // Match pan duration to interval
-                                    y: { duration: 8, ease: "easeInOut" }, // Match pan duration to interval
+                                    scale: { duration: 8, ease: "easeInOut" },
+                                    x: { duration: 8, ease: "easeInOut" },
+                                    y: { duration: 8, ease: "easeInOut" },
                                 }}
-                                className="absolute inset-0 overflow-hidden" // Add overflow-hidden to prevent animation from spilling
+                                className="absolute inset-0 overflow-hidden"
                             >
                                 <img
                                     src={image.url}
@@ -110,11 +110,14 @@ const HeroBanner = () => {
                         )
                     ))}
                 </AnimatePresence>
+                {/* Gradient Overlay for better text readability */}
                 <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.40) 0%, rgba(253, 224, 71, 0.30) 100%)'
+                    // Gradient from a subtle dark to a more opaque dark with harmony-yellow tones
+                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(245, 158, 11, 0.5) 50%, rgba(17, 24, 39, 0.8) 100%)'
                 }}></div>
             </div>
 
+            {/* Content Section */}
             <div className="container mx-auto px-4 relative z-10 py-20 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -122,52 +125,59 @@ const HeroBanner = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-3xl mx-auto space-y-6"
                 >
+                    {/* Dynamic Heading with Gradient */}
                     <motion.h1
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, type: "spring", stiffness: 100 }}
-                        className="text-4xl lg:text-5xl font-bold leading-tight h-[4.5rem]"
+                        className="text-4xl lg:text-4xl font-bold leading-tight h-[4.5rem]"
                     >
-                        <span ref={typedRef} className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-yellow-200"></span>
+                        {/* Text uses gradient from harmony-dark to harmony-yellow */}
+                        <span ref={typedRef} className="text-transparent bg-clip-text bg-[#111827]"></span>
                     </motion.h1>
 
+                    {/* Descriptive Paragraph */}
                     <motion.p
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1.2, delay: 0.3, type: "spring", damping: 10 }}
-                        className="text-base md:text-lg text-gray-100 leading-relaxed max-w-2xl mx-auto"
+                        // Paragraph text is harmony-light for contrast, with slight transparency
+                        className="text-base md:text-lg text-[#f3f4f6]/85 leading-relaxed max-w-2xl mx-auto"
                     >
                         Omnivest guides the brightest minds to world-class universities and elite destinations.
                         We're dedicated to helping students access premier education opportunities
                         through personalized support and expert guidance at every step.
                     </motion.p>
 
+                    {/* Call-to-Action Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                         className="flex flex-col sm:flex-row justify-center gap-4 pt-6"
                     >
+                        {/* Primary Button: Yellow background, Light text */}
                         <motion.button
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
-                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(251, 146, 60, 0.3)" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.4)" }} // Shadow matches yellow
                             whileTap={{ scale: 0.95 }}
-                            className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-orange-600"
+                            className="bg-[#f97316] text-[hsl(220,14%,96%)] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#111827] border-2 border-[#f97316]"
                         >
                             Our services
                         </motion.button>
 
+                        {/* Secondary Button: Dark background, Orange text, Orange border */}
                         <motion.button
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
-                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(253, 224, 71, 0.3)" }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(249, 115, 22, 0.4)" }} // Shadow matches harmony-orange
                             whileTap={{ scale: 0.95 }}
-                            className="border-2 border-yellow-300 bg-transparent text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-400 hover:border-yellow-400 hover:text-gray-900 transition-all"
+                            className="border-2 border-[#f97316] bg-[#111827] text-[#f97316] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f97316] hover:text-[#f3f4f6] transition-all"
                         >
-                            Learn more <ArrowRight className="w-4 h-4" />
+                            Learn more <ArrowRight className="w-4 h-4 text-current" />
                         </motion.button>
                     </motion.div>
                 </motion.div>

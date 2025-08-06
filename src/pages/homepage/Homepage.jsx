@@ -15,14 +15,14 @@ const Homepage = () => {
         <div className="min-h-screen bg-gray-50">
             <HeroBanner />
             <BriefAbout />
-            <WhyStudyAbroad />
-            <ServicesPreview />
-            <PopularDestinations />
-            <PackagesTeaser />
-            <AddOnServices />
-            <TestimonialCarousel />
-            <FAQSection />
-            <CallToAction />
+            {/* <WhyStudyAbroad /> */}
+            {/* <ServicesPreview /> */}
+            {/* <PopularDestinations /> */}
+            {/* <PackagesTeaser /> */}
+            {/* <AddOnServices /> */}
+            {/* <TestimonialCarousel /> */}
+            {/* <FAQSection /> */}
+            {/* <CallToAction /> */}
         </div>
     );
 };

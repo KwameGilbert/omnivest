@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-// The harmony colors from your Tailwind config, but with full class names
-const harmonyColors = {
-  darkGreen: 'bg-harmony-dark-green',
-  lightTan: 'bg-harmony-light-tan',
-  red: 'bg-harmony-red',
-  orange: 'bg-harmony-orange',
-};
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
@@ -22,34 +14,39 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`bg-harmony-light-tan text-harmony-dark-green shadow-lg backdrop-blur-lg border-b border-harmony-dark-green/10`}
+      // Navbar background: Harmony Light, Text: Harmony Dark
+      // Subtle border for definition
+      className="bg-[#f3f4f6] text-[#111827] shadow-lg backdrop-blur-lg border-b border-[#111827]/10"
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo Section */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3">
             <Link to="/" className="flex items-center space-x-3">
               <div className="flex items-center space-x-3">
                 {logoError ? (
-                  <div className={`w-12 h-12 ${harmonyColors.orange} rounded-lg flex items-center justify-center font-bold text-white text-lg`}>
+                  // Fallback logo uses a gradient of accent colors
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#f97316] rounded-lg flex items-center justify-center font-bold text-white text-lg">
                     O
                   </div>
                 ) : (
                   <img
                     src="/omnivest-logo.png"
                     alt="Omnivest Logo"
-                    className="w-12 h-12 object-contain"
+                    className="w-10 h-10 object-contain"
                     onError={() => setLogoError(true)}
                   />
                 )}
                 <div className="flex flex-col">
                   <h1 className="text-xl font-bold">
-                    <span className="text-harmony-orange">Omni</span>
-                    <span className="bg-gradient-to-r from-harmony-orange to-harmony-red bg-clip-text text-transparent">
+                    {/* "Omni" in primary text color, "vest" with a vibrant gradient */}
+                    <span className="text-[#111827]">Omni</span>
+                    <span className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] bg-clip-text text-transparent">
                       vest
                     </span>
                   </h1>
-                  <p className="text-xs text-harmony-dark-green/70 italic">Your Journey, Our Mission</p>
+                  {/* Tagline in a slightly muted primary text color */}
+                  <p className="text-xs text-[#111827]/70 italic">Your Journey, Our Mission</p>
                 </div>
               </div>
             </Link>
@@ -62,10 +59,12 @@ const Navbar = () => {
                 <motion.div whileHover={{ y: -2 }}>
                   <Link
                     to={`/${item.toLowerCase()}`}
-                    className="hover:text-harmony-orange transition-colors duration-300 relative group"
+                    // Default link color slightly muted, hover uses accent yellow
+                    className="text-[#111827]/90 hover:text-[#f59e0b] transition-colors duration-300 relative group"
                   >
                     {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-harmony-orange group-hover:w-full transition-all duration-300"></span>
+                    {/* Underline uses accent yellow on hover */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></span>
                   </Link>
                 </motion.div>
               </li>
@@ -74,7 +73,8 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`bg-gradient-to-r from-harmony-orange to-harmony-red text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300`}
+                // CTA button uses accent yellow, text is light for contrast
+                className="bg-[#f59e0b] text-[#f3f4f6] px-5 py-2 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b] shadow-sm"
               >
                 Get Started
               </motion.button>
@@ -86,15 +86,16 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleMenu}
-            className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-harmony-dark-green/10 transition-colors"
+            // Icon color is primary dark, subtle hover background
+            className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-[#111827]/10 transition-colors text-[#111827]"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-harmony-dark-green" /> : <Menu className="w-6 h-6 text-harmony-dark-green" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -102,7 +103,8 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden bg-harmony-light-tan border-t border-harmony-dark-green/10`}
+            // Mobile menu background is light, slightly transparent, with subtle border
+            className="md:hidden bg-[#f3f4f6]/95 border-t border-[#111827]/10"
           >
             <ul className="flex flex-col px-4 py-6 space-y-4 font-medium">
               {["Home", "About", "Services", "Packages", "Contact"].map((item, i) => (
@@ -115,7 +117,8 @@ const Navbar = () => {
                   <Link
                     to={`/${item.toLowerCase()}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block py-3 px-4 rounded-lg hover:bg-harmony-dark-green/10 hover:text-harmony-orange transition-all duration-300"
+                    // Mobile links are primary dark, with subtle hover background and accent text
+                    className="block py-3 px-4 rounded-lg hover:bg-[#111827]/10 text-[#111827] hover:text-[#f59e0b] transition-all duration-300"
                   >
                     {item}
                   </Link>
@@ -125,10 +128,12 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
+                className="mt-2"
               >
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className={`w-full bg-gradient-to-r from-harmony-orange to-harmony-red text-white py-3 px-4 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-300`}
+                  // Mobile CTA button matches desktop
+                  className="w-full bg-[#f59e0b] text-[#f3f4f6] py-3 px-4 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b]"
                 >
                   Get Started
                 </button>

@@ -6,7 +6,7 @@ import { Globe, BookOpen, Users, Trophy } from 'lucide-react';
 
 const WhyStudyAbroad = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, threshold: 0.3 }); // Adjust threshold as needed for when animation triggers
+    const isInView = useInView(ref, { once: false, threshold: 0.5 }); 
 
     const benefits = [
         {
