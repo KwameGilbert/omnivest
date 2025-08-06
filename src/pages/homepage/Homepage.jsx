@@ -8,6 +8,7 @@ import PackagesTeaser from './../../components/homepage/PackagesTeaser';
 import AddOnServices from './../../components/homepage/AddOnServices';
 import TestimonialCarousel from './../../components/homepage/TestimonialCarousel';
 import FAQSection from './../../components/homepage/FAQSection';
+import ContactPopup from './../../components/homepage/ContactPopup';
 import CallToAction from './../../components/homepage/CallToAction';
 
 const Homepage = () => {
@@ -15,14 +16,15 @@ const Homepage = () => {
         <div className="min-h-screen bg-gray-50">
             <HeroBanner />
             <BriefAbout />
-            {/* <WhyStudyAbroad /> */}
-            {/* <ServicesPreview /> */}
+            <ServicesPreview />
+            <WhyStudyAbroad />
             {/* <PopularDestinations /> */}
             {/* <PackagesTeaser /> */}
             {/* <AddOnServices /> */}
             {/* <TestimonialCarousel /> */}
-            {/* <FAQSection /> */}
+            <FAQSection />
             {/* <CallToAction /> */}
+            <ContactPopup />
         </div>
     );
 };

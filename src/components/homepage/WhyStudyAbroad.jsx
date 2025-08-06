@@ -6,7 +6,7 @@ import { Globe, BookOpen, Users, Trophy } from 'lucide-react';
 
 const WhyStudyAbroad = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, threshold: 0.5 }); 
+    const isInView = useInView(ref, { once: false, threshold: 0.3 }); 
 
     const benefits = [
         {
@@ -32,7 +32,7 @@ const WhyStudyAbroad = () => {
     ];
 
     return (
-        <section ref={ref} className="py-20 bg-gray-900 text-gray-100"> {/* Changed background and default text color */}
+        <section ref={ref} className="py-20 bg-gray-600 text-gray-100"> {/* Changed background and default text color */}
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -43,7 +43,7 @@ const WhyStudyAbroad = () => {
                     <motion.h2
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.9, delay: 0.3 }}
                         className="text-4xl lg:text-5xl font-bold text-gray-100 mb-6" // Changed text color
                     >
                         Why Study{' '}
@@ -67,11 +67,11 @@ const WhyStudyAbroad = () => {
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -20 : 20 }}
+                            initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -80 : 80 }}
                             animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
-                            transition={{ duration: 0.8, delay: 0.2 + index * 0.1, type: "spring", stiffness: 100 }} // Diversified animation delay and added spring type
+                            transition={{ duration: 0.5, delay: 0.5 + index * 0.1, type: "spring", stiffness: 100 }} // Diversified animation delay and added spring type
                             whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(251, 146, 60, 0.2)" }} // Updated shadow color
-                            className="text-center p-6 rounded-xl hover:shadow-lg transition-all bg-gray-800" // Changed background
+                            className="text-center p-6 rounded-xl hover:shadow-lg transition-all bg-gray-700" // Changed background
                         >
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: index % 2 === 0 ? 5 : -5 }} // Alternating rotation on hover

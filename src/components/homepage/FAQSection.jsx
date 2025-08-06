@@ -57,7 +57,8 @@ const FAQSection = () => {
     };
 
     return (
-        <section ref={ref} className="py-20 bg-white">
+        // Section background: Harmony Light
+        <section ref={ref} className="py-20 bg-[#f3f4f6]">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -69,7 +70,8 @@ const FAQSection = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-white"
+                        // Icon background uses the accent orange/yellow gradient
+                        className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-[#f59e0b] to-[#f97316] rounded-xl flex items-center justify-center text-white"
                     >
                         <HelpCircle className="w-8 h-8" />
                     </motion.div>
@@ -78,10 +80,11 @@ const FAQSection = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6"
+                        // Heading text is Harmony Dark, with gradient for "Questions"
+                        className="text-4xl lg:text-5xl font-bold text-[#111827] mb-6"
                     >
                         Frequently Asked{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#f97316]">
                             Questions
                         </span>
                     </motion.h2>
@@ -90,7 +93,7 @@ const FAQSection = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl text-gray-600 max-w-3xl mx-auto"
+                        className="text-xl text-[#111827]/85 max-w-3xl mx-auto"
                     >
                         Get answers to the most common questions about our services and the study abroad process.
                     </motion.p>
@@ -103,14 +106,16 @@ const FAQSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.1 + index * 0.05 }}
-                            className="bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                            // FAQ item background is white with a subtle border and shadow
+                            className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-[#f3f4f6]/50"
                         >
                             <motion.button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-100 transition-colors"
-                                whileHover={{ backgroundColor: "rgb(249, 250, 251)" }}
+                                // Button hover background is light gray
+                                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-[#f3f4f6] transition-colors"
+                                whileHover={{ backgroundColor: "rgb(243, 244, 246)" }}
                             >
-                                <span className="text-lg font-semibold text-gray-800 pr-8">
+                                <span className="text-lg font-semibold text-[#111827] pr-8">
                                     {faq.question}
                                 </span>
                                 <motion.div
@@ -118,7 +123,7 @@ const FAQSection = () => {
                                     transition={{ duration: 0.3 }}
                                     className="flex-shrink-0"
                                 >
-                                    <ChevronDown className="w-5 h-5 text-gray-600" />
+                                    <ChevronDown className="w-5 h-5 text-[#111827]/70" />
                                 </motion.div>
                             </motion.button>
                             
@@ -132,7 +137,7 @@ const FAQSection = () => {
                                         className="overflow-hidden"
                                     >
                                         <div className="px-6 pb-5">
-                                            <p className="text-gray-600 leading-relaxed">
+                                            <p className="text-[#111827]/85 leading-relaxed">
                                                 {faq.answer}
                                             </p>
                                         </div>
@@ -143,25 +148,27 @@ const FAQSection = () => {
                     ))}
                 </div>
 
+                {/* CTA Section */}
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="text-center mt-12"
+                    // CTA background uses a very subtle gradient from the accent colors
+                    className="text-center mt-12 bg-gradient-to-r from-[#f59e0b]/5 to-[#f97316]/5 p-8 rounded-xl"
                 >
-                    <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-xl">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4">Still Have Questions?</h3>
-                        <p className="text-gray-600 mb-6">
-                            Our expert consultants are here to help. Book a free consultation to get personalized answers.
-                        </p>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
-                        >
-                            Book Free Consultation
-                        </motion.button>
-                    </div>
+                    <h3 className="text-2xl font-bold text-[#111827] mb-4">Still Have Questions?</h3>
+                    <p className="text-[#111827]/85 mb-6">
+                        Our expert consultants are here to help. Book a free consultation to get personalized answers.
+                    </p>
+                    
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        // CTA button uses the accent orange/yellow gradient
+                        className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+                    >
+                        Book Free Consultation
+                    </motion.button>
                 </motion.div>
             </div>
         </section>
