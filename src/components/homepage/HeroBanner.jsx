@@ -76,7 +76,7 @@ const HeroBanner = () => {
             setCurrentImageIndex((prevIndex) =>
                 (prevIndex + 1) % backgroundImages.length
             );
-        }, 8000);
+        }, 7500);
 
         return () => clearInterval(interval);
     }, [imagesLoaded, backgroundImages.length]);
@@ -113,7 +113,7 @@ const HeroBanner = () => {
                 {/* Gradient Overlay for better text readability */}
                 <div className="absolute inset-0" style={{
                     // Gradient from a subtle dark to a more opaque dark with harmony-yellow tones
-                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(245, 158, 11, 0.5) 50%, rgba(17, 24, 39, 0.8) 100%)'
+                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.5) 0%, rgba(245, 158, 11, 0.5) 50%, rgba(17, 24, 39, 0.5) 100%)'
                 }}></div>
             </div>
 
@@ -163,7 +163,7 @@ const HeroBanner = () => {
                             transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
                             whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.4)" }} // Shadow matches yellow
                             whileTap={{ scale: 0.95 }}
-                            className="bg-[#f97316] text-[hsl(220,14%,96%)] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#111827] border-2 border-[#f97316]"
+                            className="bg-[#f59e0b] text-[hsl(220,14%,96%)] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#111827] border-2 border-[#f59e0b]"
                         >
                             Our services
                         </motion.button>
@@ -175,7 +175,7 @@ const HeroBanner = () => {
                             transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
                             whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(249, 115, 22, 0.4)" }} // Shadow matches harmony-orange
                             whileTap={{ scale: 0.95 }}
-                            className="border-2 border-[#f97316] bg-[#111827] text-[#f97316] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f97316] hover:text-[#f3f4f6] transition-all"
+                            className="border-2 border-[#f59e0b] bg-[#111827] text-[#f59e0b] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#f3f4f6] transition-all"
                         >
                             Learn more <ArrowRight className="w-4 h-4 text-current" />
                         </motion.button>
