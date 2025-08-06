@@ -91,92 +91,80 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Values */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                            Our{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                                Values
-                            </span>
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            These core values guide everything we do and define how we serve our students.
-                        </p>
-                    </motion.div>
+            {/* /* Values */}
+                        <section className="py-20 bg-white">
+                            <div className="container mx-auto px-4">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="text-center mb-16"
+                                >
+                                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                                        Our{' '}
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                                            Values
+                                        </span>
+                                    </h2>
+                                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                                        These core values guide everything we do and define how we serve our students.
+                                    </p>
+                                </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: index * 0.1 }}
-                                whileHover={{ y: -10 }}
-                                className="text-center"
-                            >
-                                <div className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-r ${value.color} rounded-xl flex items-center justify-center text-white`}>
-                                    {value.icon}
+                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                    {values.map((value, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, y: 50 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: index * 0.1 }}
+                                            whileHover={{ y: -10 }}
+                                            className="text-center"
+                                        >
+                                            <div className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-r ${value.color} rounded-xl flex items-center justify-center text-white`}>
+                                                {value.icon}
+                                            </div>
+                                            <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
+                                            <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                                        </motion.div>
+                                    ))}
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
-                                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                            </div>
+                        </section>
 
-            {/* Stats */}
-            <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="text-center"
-                        >
-                            <div className="text-4xl lg:text-5xl font-bold mb-2">5000+</div>
-                            <div className="text-blue-200">Students Guided</div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-center"
-                        >
-                            <div className="text-4xl lg:text-5xl font-bold mb-2">200+</div>
-                            <div className="text-blue-200">Universities</div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-center"
-                        >
-                            <div className="text-4xl lg:text-5xl font-bold mb-2">25+</div>
-                            <div className="text-blue-200">Countries</div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="text-center"
-                        >
-                            <div className="text-4xl lg:text-5xl font-bold mb-2">95%</div>
-                            <div className="text-blue-200">Success Rate</div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
+                        {/* Stats */}
+                        <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+                            <div className="container mx-auto px-4">
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                                    <Counter
+                                        end={5000}
+                                        suffix="+"
+                                        label="Students Guided"
+                                        delay={0}
+                                    />
+                                    <Counter
+                                        end={200}
+                                        suffix="+"
+                                        label="Universities"
+                                        delay={0.1}
+                                    />
+                                    <Counter
+                                        end={25}
+                                        suffix="+"
+                                        label="Countries"
+                                        delay={0.2}
+                                    />
+                                    <Counter
+                                        end={95}
+                                        suffix="%"
+                                        label="Success Rate"
+                                        delay={0.3}
+                                    />
+                                </div>
+                            </div>
+                        </section>
 
-            {/* CTA */}
+                        {/* CTA */}
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4 text-center">
                     <motion.div
