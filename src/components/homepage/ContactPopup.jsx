@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const ContactPopup = ({ showDelay = 9000 }) => {
+const ContactPopup = ({ showDelay = 30000 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
