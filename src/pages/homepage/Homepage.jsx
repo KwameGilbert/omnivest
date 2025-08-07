@@ -21,7 +21,7 @@ const Homepage = () => {
             {/* <PopularDestinations /> */}
             {/* <PackagesTeaser /> */}
             {/* <AddOnServices /> */}
-            {/* <TestimonialCarousel /> */}
+            <TestimonialCarousel />
             <FAQSection />
             {/* <CallToAction /> */}
             <ContactPopup />
