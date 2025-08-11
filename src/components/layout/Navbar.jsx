@@ -42,8 +42,8 @@ const Navbar = () => {
                     {/* "Omni" in primary text color, "vest" with a vibrant gradient */}
                     <span className="text-[#111827]">Omni</span>
                     <span className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] bg-clip-text text-transparent">
-                      vest
-                    </span>
+                      vest 
+                    </span> Educational Consult
                   </h1>
                   {/* Tagline in a slightly muted primary text color */}
                   <p className="text-xs text-[#111827]/70 italic">Your Journey, Our Mission</p>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 // CTA button uses accent yellow, text is light for contrast
-                className="bg-[#f59e0b] text-[#f3f4f6] px-5 py-2 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b] shadow-sm"
+                className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray transition-all duration-300 border border-orange-600 shadow-sm"
               >
                 Get Started
               </motion.button>

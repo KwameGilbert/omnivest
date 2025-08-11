@@ -140,7 +140,7 @@ const HeroBanner = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.3, type: "spring", damping: 10 }}
-            className="text-base md:text-lg text-[#111827]/85 leading-relaxed max-w-2xl mx-auto"
+            className="text-md md:text-lg text-[#111827] leading-relaxed max-w-2xl mx-auto"
           >
             Omnivest guides the brightest minds to world-class universities and elite destinations.
             We're dedicated to helping students access premier education opportunities

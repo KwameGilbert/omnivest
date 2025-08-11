@@ -69,9 +69,9 @@ const BriefAbout = () => {
                         
                         {/* Paragraph text with key phrases highlighted in orange */}
                         <p className="text-[#111827]/90 leading-relaxed relative z-10">
-                            To support students at <span className="text-[#f59e0b] font-medium">every step</span> of their international education journey — career guidance,
-                            school selection, application, visa, accommodation, and settling abroad — using <span className="text-[#f59e0b] font-medium">transparent,
-                            expert-led</span>, and personalized services.
+                            To support students at every step of their international education journey — career guidance,
+                            school selection, application, visa, accommodation, and settling abroad — using transparent,
+                            expert-led, and personalized services.
                         </p>
                     </motion.div>
 

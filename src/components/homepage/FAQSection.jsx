@@ -20,19 +20,15 @@ const FAQSection = () => {
         },
         {
             question: "Are your services paid?",
-            answer: "Yes, our packages are affordable and flexible. We offer different service levels to match your budget and needs. Contact us for detailed pricing."
+            answer: "No, our services are not paid. We're committed to making education abroad accessible to everyone."
         },
-        {
-            question: "Do you help with scholarships?",
-            answer: "Absolutely! We help identify scholarship opportunities and guide you through the application process to maximize your chances of securing financial aid."
-        },
+        // {
+        //     question: "Do you help with scholarships?",
+        //     answer: "Absolutely! We help identify scholarship opportunities and guide you through the application process to maximize your chances of securing financial aid."
+        // },
         {
             question: "What visa support do you provide?",
             answer: "We provide comprehensive visa support including document preparation, application submission, interview coaching, and follow-up until visa approval."
-        },
-        {
-            question: "Do you help with language tests like IELTS/TOEFL?",
-            answer: "Yes, we provide IELTS/TOEFL preparation materials and guidance. We also help identify universities that accept alternative English proficiency tests."
         },
         {
             question: "Do you provide essay and SOP writing help?",
