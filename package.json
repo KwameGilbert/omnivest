@@ -1,15 +1,18 @@
 {
-  "name": "omini",
+  "name": "omnivest",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite dev",
-    "watch": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
-    "build": "vite build",
-    "build:css": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "node api/index.js",
+    "client": "cd client && vite dev",
+    "server": "cd api && nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build:client",
+    "build:client": "cd client && vite build",
+    "watch:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "build:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css",
+    "preview": "cd client && vite preview",
+    "start:prod": "NODE_ENV=production npm start"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
@@ -28,6 +31,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "concurrently": "^8.2.0",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
