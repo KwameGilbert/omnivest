@@ -5,7 +5,7 @@ import config from '../config';
  * Handles different types of email templates and API communication
  */
 
-// const API_URL = config.API_URL;
+const API_URL = config.API_URL;
 const ADMIN_EMAIL = config.ADMIN_EMAIL;
 
 

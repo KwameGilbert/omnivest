@@ -1,5 +1,5 @@
 const config = {
-    API_URL: 'http://localhost:3001',
+    API_URL: '/api',
     ADMIN_EMAIL: 'gkukah1@gmail.com'
 };
 
