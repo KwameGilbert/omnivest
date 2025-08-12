@@ -7,12 +7,12 @@
     "client": "cd client && vite dev",
     "server": "cd api && nodemon index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build:client",
+    "build": "npm run build:css && npm run build:client",
     "build:client": "cd client && vite build",
     "watch:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
     "build:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css",
     "preview": "cd client && vite preview",
-    "start:prod": "NODE_ENV=production npm start"
+    "start:prod": "cross-env NODE_ENV=production npm start"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
