@@ -11,12 +11,10 @@ const MainLayout = ({ children }) => {
             <main className="flex-grow">
                 {children}
             </main>
-            {/* <WhatsAppButton /> */}
+            <WhatsAppButton />
             <Footer />
         </div>
     );
 };
 
 export default MainLayout;
-
-
