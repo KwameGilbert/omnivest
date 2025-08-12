@@ -30,7 +30,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-gray-600 text-white">
             <div className="container mx-auto px-4 py-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Company Info */}
@@ -40,7 +40,7 @@ const Footer = () => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-2xl font-bold text-gradient bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-4">
+                        <h3 className="text-2xl font-bold text-gradient bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent mb-4">
                             Omnivest
                         </h3>
                         <p className="text-gray-300 mb-6 leading-relaxed">
@@ -56,7 +56,7 @@ const Footer = () => {
                                     href={social.href}
                                     whileHover={{ scale: 1.1, y: -2 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-gray-800 p-3 rounded-full hover:bg-indigo-600 transition-colors"
+                                    className="bg-gray-600 p-3 rounded-full hover:bg-orange-600 transition-colors"
                                     aria-label={social.label}
                                 >
                                     {social.icon}
@@ -79,7 +79,7 @@ const Footer = () => {
                                     <motion.a
                                         href={link.href}
                                         whileHover={{ x: 5 }}
-                                        className="text-gray-300 hover:text-yellow-400 transition-colors"
+                                        className="text-gray-300 hover:text-orange-400 transition-colors"
                                     >
                                         {link.name}
                                     </motion.a>
@@ -102,7 +102,7 @@ const Footer = () => {
                                     <motion.a
                                         href={service.href}
                                         whileHover={{ x: 5 }}
-                                        className="text-gray-300 hover:text-yellow-400 transition-colors"
+                                        className="text-gray-300 hover:text-orange-400 transition-colors"
                                     >
                                         {service.name}
                                     </motion.a>
@@ -121,7 +121,7 @@ const Footer = () => {
                         <h4 className="text-xl font-semibold mb-6">Contact Info</h4>
                         <div className="space-y-4">
                             <div className="flex items-start space-x-3">
-                                <MapPin className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
+                                <MapPin className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                                 <div>
                                     <p className="text-gray-300">
                                         123 Education Street,<br />
@@ -132,15 +132,15 @@ const Footer = () => {
                             </div>
                             
                             <div className="flex items-center space-x-3">
-                                <Phone className="w-5 h-5 text-yellow-400" />
-                                <a href="tel:+15551234567" className="text-gray-300 hover:text-yellow-400 transition-colors">
+                                <Phone className="w-5 h-5 text-orange-400" />
+                                <a href="tel:+15551234567" className="text-gray-300 hover:text-orange-400 transition-colors">
                                     +1 (555) 123-4567
                                 </a>
                             </div>
                             
                             <div className="flex items-center space-x-3">
-                                <Mail className="w-5 h-5 text-yellow-400" />
-                                <a href="mailto:info@omnivest.com" className="text-gray-300 hover:text-yellow-400 transition-colors">
+                                <Mail className="w-5 h-5 text-orange-400" />
+                                <a href="mailto:info@omnivest.com" className="text-gray-300 hover:text-orange-400 transition-colors">
                                     info@omnivest.com
                                 </a>
                             </div>
@@ -164,21 +164,21 @@ const Footer = () => {
                         <motion.a
                             href="/privacy"
                             whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-yellow-400 transition-colors"
+                            className="text-gray-400 hover:text-orange-400 transition-colors"
                         >
                             Privacy Policy
                         </motion.a>
                         <motion.a
                             href="/terms"
                             whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-yellow-400 transition-colors"
+                            className="text-gray-400 hover:text-orange-400 transition-colors"
                         >
                             Terms of Service
                         </motion.a>
                         <motion.a
                             href="/cookies"
                             whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-yellow-400 transition-colors"
+                            className="text-gray-400 hover:text-orange-400 transition-colors"
                         >
                             Cookie Policy
                         </motion.a>

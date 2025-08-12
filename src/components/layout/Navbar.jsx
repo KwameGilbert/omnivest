@@ -74,7 +74,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 // CTA button uses accent yellow, text is light for contrast
-                className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray transition-all duration-300 border border-orange-600 shadow-sm"
+                className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-all duration-300 border border-orange-600 shadow-sm"
               >
                 Get Started
               </motion.button>
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   // Mobile CTA button matches desktop
-                  className="w-full bg-[#f59e0b<span></span>] text-[#f3f4f6] py-3 px-4 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b]"
+                  className="w-full bg-[#f59e0b] text-[#f3f4f6] py-3 px-4 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b]"
                 >
                   Get Started
                 </button>

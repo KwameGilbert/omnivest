@@ -42,4 +42,4 @@ const VisionMission = () => {
     );
 };
 
-export default VisionMission;
+export default VisionMission; 

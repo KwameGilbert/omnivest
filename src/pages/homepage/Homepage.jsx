@@ -1,4 +1,3 @@
-import React from 'react';
 import HeroBanner from './../../components/homepage/HeroBanner';
 import BriefAbout from './../../components/homepage/BriefAbout';
 import WhyStudyAbroad from './../../components/homepage/WhyStudyAbroad';
