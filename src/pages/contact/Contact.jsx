@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import EmailService from '../../services/EmailService';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const Contact = () => {
         service: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
 
     const handleInputChange = (e) => {
         setFormData({
@@ -18,10 +21,43 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Handle form submission here
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        
+        try {
+            const response = await EmailService.handleContactFormSubmission(formData);
+            
+            if (response.success) {
+                setSubmitStatus({ 
+                    type: 'success', 
+                    message: 'Thank you for your message! We\'ll get back to you shortly.' 
+                });
+                
+                // Clear form fields
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    service: '',
+                    message: ''
+                });
+            } else {
+                setSubmitStatus({ 
+                    type: 'error', 
+                    message: response.message || 'Failed to submit. Please try again.' 
+                });
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus({ 
+                type: 'error', 
+                message: 'Connection error. Please try again later.' 
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const contactInfo = [
@@ -207,6 +243,12 @@ const Contact = () => {
                                     <Send className="w-5 h-5" />
                                     <span>Send Message</span>
                                 </motion.button>
+
+                                {submitStatus && (
+                                    <div className={`mt-4 p-3 rounded-lg text-center ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                                        {submitStatus.message}
+                                    </div>
+                                )}
                             </form>
                         </motion.div>
 

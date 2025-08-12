@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import EmailService from '../../services/EmailService';
 
-const ContactPopup = ({ showDelay = 10000 }) => {
+const ContactPopup = ({ showDelay = 60000 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
     const popupRef = useRef(null);
     const hasShownRef = useRef(false);
 
@@ -51,15 +54,46 @@ const ContactPopup = ({ showDelay = 10000 }) => {
         setIsVisible(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Here you would typically send this data to your backend or a CRM
-        console.log('Contact Info Submitted:', { name, phone, email });
-        alert('Thank you for your interest! We will get back to you shortly.'); // Using alert for demo, replace with custom modal
-        setIsVisible(false); // Close popup after submission
-        setName(''); // Clear form fields
-        setPhone('');
-        setEmail('');
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        
+        try {
+            const formData = { name, phone, email };
+            const response = await EmailService.sendContactPopupNotification(formData);
+            
+            if (response.success) {
+                setSubmitStatus({ 
+                    type: 'success', 
+                    message: 'Thank you! We\'ll contact you shortly.' 
+                });
+                
+                // Clear form fields
+                setName('');
+                setPhone('');
+                setEmail('');
+                
+                // Close popup after a delay
+                setTimeout(() => {
+                    setIsVisible(false);
+                    setSubmitStatus(null);
+                }, 3000);
+            } else {
+                setSubmitStatus({ 
+                    type: 'error', 
+                    message: response.message || 'Failed to submit. Please try again.' 
+                });
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus({ 
+                type: 'error', 
+                message: 'Connection error. Please try again later.' 
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -94,6 +128,19 @@ const ContactPopup = ({ showDelay = 10000 }) => {
                             <p className="text-gray-600">Leave your contact details, and we'll call you back!</p>
                         </div>
 
+                        {/* Status Message */}
+                        {submitStatus && (
+                            <div 
+                                className={`mb-6 p-3 rounded-lg text-center ${
+                                    submitStatus.type === 'success' 
+                                        ? 'bg-green-50 text-green-800' 
+                                        : 'bg-red-50 text-red-800'
+                                }`}
+                            >
+                                {submitStatus.message}
+                            </div>
+                        )}
+
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
@@ -102,9 +149,10 @@ const ContactPopup = ({ showDelay = 10000 }) => {
                                     id="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                                     placeholder="Your Name"
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -114,8 +162,9 @@ const ContactPopup = ({ showDelay = 10000 }) => {
                                     id="phone"
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                                     placeholder="e.g., +1234567890"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -125,17 +174,19 @@ const ContactPopup = ({ showDelay = 10000 }) => {
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                                     placeholder="your.email@example.com"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <motion.button
                                 type="submit"
                                 whileHover={{ scale: 1.02, boxShadow: "0 5px 15px -3px rgba(79, 70, 229, 0.4)" }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                disabled={isSubmitting}
                             >
-                                Submit
+                                {isSubmitting ? 'Submitting...' : 'Submit'}
                             </motion.button>
                         </form>
                     </motion.div>
