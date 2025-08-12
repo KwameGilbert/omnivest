@@ -5,7 +5,7 @@ import config from '../config';
  * Handles different types of email templates and API communication
  */
 
-const API_URL = config.API_URL;
+// const API_URL = config.API_URL;
 const ADMIN_EMAIL = config.ADMIN_EMAIL;
 
 
@@ -16,7 +16,7 @@ const ADMIN_EMAIL = config.ADMIN_EMAIL;
  */
 const sendEmail = async (emailData) => {
     try {
-        const response = await fetch(`${API_URL}/send-email`, {
+        const response = await fetch(`/api/send-email`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

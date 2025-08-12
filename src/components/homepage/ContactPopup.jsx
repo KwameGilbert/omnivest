@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import EmailService from '../../services/EmailService';
 
-const ContactPopup = ({ showDelay = 60000 }) => {
+const ContactPopup = ({ showDelay = 9000 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
