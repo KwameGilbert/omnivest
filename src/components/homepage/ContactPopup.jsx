@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const ContactPopup = ({ showDelay = 60000 }) => { // Changed default to 60000ms (1 minute)
+const ContactPopup = ({ showDelay = 10000 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -78,62 +78,62 @@ const ContactPopup = ({ showDelay = 60000 }) => { // Changed default to 60000ms 
                         animate={{ scale: 1, y: 0 }}
                         exit={{ scale: 0.9, y: 50 }}
                         transition={{ duration: 0.4, type: "spring", stiffness: 200, damping: 20 }}
-                        className="relative bg-harmony-light text-harmony-dark rounded-xl shadow-2xl p-6 w-full max-w-md mx-auto border border-harmony-dark/10"
+                        className="relative bg-white text-gray-800 rounded-xl shadow-2xl p-6 w-full max-w-md mx-auto border border-gray-200"
                     >
                         {/* Close Button */}
                         <button
                             onClick={handleClose}
-                            className="absolute top-3 right-3 p-2 rounded-full hover:bg-harmony-dark/10 transition-colors text-harmony-dark focus:outline-none"
+                            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-600 focus:outline-none"
                             aria-label="Close popup"
                         >
                             <X className="w-5 h-5" />
                         </button>
 
                         <div className="text-center mb-6">
-                            <h2 className="text-2xl font-bold text-harmony-dark mb-2">Need More Information?</h2>
-                            <p className="text-harmony-dark/85">Leave your contact details, and we'll call you back!</p>
+                            <h2 className="text-2xl font-bold text-gray-800 mb-2">Need More Information?</h2>
+                            <p className="text-gray-600">Leave your contact details, and we'll call you back!</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-harmony-dark/90 mb-1">Name</label>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                                 <input
                                     type="text"
                                     id="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full px-4 py-2 border border-harmony-dark/20 rounded-lg bg-white text-harmony-dark placeholder-harmony-dark/50 focus:ring-2 focus:ring-harmony-green focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="Your Name"
                                     required
                                 />
                             </div>
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-harmony-dark/90 mb-1">Phone (Optional)</label>
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone (Optional)</label>
                                 <input
                                     type="tel"
                                     id="phone"
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
-                                    className="w-full px-4 py-2 border border-harmony-dark/20 rounded-lg bg-white text-harmony-dark placeholder-harmony-dark/50 focus:ring-2 focus:ring-harmony-green focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="e.g., +1234567890"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-harmony-dark/90 mb-1">Email (Optional)</label>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
                                 <input
                                     type="email"
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-2 border border-harmony-dark/20 rounded-lg bg-white text-harmony-dark placeholder-harmony-dark/50 focus:ring-2 focus:ring-harmony-green focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="your.email@example.com"
                                 />
                             </div>
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: 1.02, boxShadow: "0 5px 15px -3px rgba(35, 197, 94, 0.4)" }}
+                                whileHover={{ scale: 1.02, boxShadow: "0 5px 15px -3px rgba(79, 70, 229, 0.4)" }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full bg-gradient-to-r from-harmony-green to-harmony-orange text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-harmony-green focus:ring-offset-2"
+                                className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                             >
                                 Submit
                             </motion.button>
