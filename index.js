@@ -66,7 +66,20 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
+// Catch-all handler for client-side routing
+app.get('*', async (req, res) => {
+    res.send(path.resolve('./dist', 'index.html'));
+});
+
+// Add this before app.listen()
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
+
