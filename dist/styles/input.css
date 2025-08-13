@@ -1,0 +1,22 @@
+/* src/index.css or src/globals.css */
+
+@import "tailwindcss";
+
+@theme {
+  /* Primary background and text colors */
+  --color-harmony-light: #f8f9fd;
+  --color-harmony-dark: #171d29;
+  /* Primary accent/brand color */
+  --color-harmony-yellow: #23c55e;
+  /* Secondary accent color for small touches */
+  --color-harmony-orange: #ff9a2e;
+}
+
+/* Set Inter as the default font and default background colors */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  background-color: var(--color-harmony-light);
+  color: var(--color-harmony-dark);
+  font-family: "Inter", sans-serif;
+}

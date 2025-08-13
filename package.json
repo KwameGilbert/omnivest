@@ -1,41 +1,22 @@
 {
-  "name": "omnivest",
-  "private": true,
+  "name": "omnivest-email-api",
   "version": "1.0.0",
+  "description": "Simple email API for OmniVest",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "client": "cd client && vite dev",
-    "server": "cd api && nodemon index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build:css && npm run build:client",
-    "build:client": "cd client && vite build",
-    "watch:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
-    "build:css": "cd client && npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css",
-    "preview": "cd client && vite preview",
-    "start:prod": "cross-env NODE_ENV=production npm start"
+    "start": "node index.js",
+    "build-client": "cd ./client/ && npm run build && cd ..",
+    "prestart": "npm run build-client",
+    "dev": "nodemon index.js",
+    "predev": "npm run build-client"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.11",
-    "@tailwindcss/vite": "^4.1.11",
-    "@vercel/analytics": "^1.5.0",
-    "framer-motion": "^12.23.12",
-    "lucide-react": "^0.536.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.7.1",
-    "tailwindcss": "^4.1.11",
-    "typed.js": "^2.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "concurrently": "^8.2.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "vite": "^7.0.4"
+    "nodemon": "^3.0.1"
   }
 }

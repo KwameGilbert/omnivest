@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static("dist"));
 
 // Email transporter setup
 const transporter = nodemailer.createTransport({
@@ -24,7 +25,7 @@ const transporter = nodemailer.createTransport({
 
 // API Routes
 app.post('/api/send-email', async (req, res) => {
-    const { to, subject, text, html } = req.body;
+    const { to, subject, text, html, replyTo, name } = req.body;
 
     if (!to || !subject || (!text && !html)) {
         return res.status(400).json({
@@ -41,6 +42,11 @@ app.post('/api/send-email', async (req, res) => {
             text,
             html
         };
+
+        // Add reply-to header if provided
+        if (replyTo) {
+            mailOptions.replyTo = name ? `"${name}" <${replyTo}>` : replyTo;
+        }
 
         const info = await transporter.sendMail(mailOptions);
         console.log('Email sent: ' + info.response);
@@ -60,25 +66,6 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
-// // Add the contact and contact-popup endpoints here
-// app.post('/api/contact', async (req, res) => {
-//     // Your existing contact form handler
-// });
-
-// app.post('/api/contact-popup', async (req, res) => {
-//     // Your existing contact popup handler
-// });
-
-// Only serve static files in production
-if (process.env.NODE_ENV === 'production') {
-    // Serve static files from the React app build directory
-    app.use(express.static(path.resolve(__dirname, '../dist')));
-
-    // For any request that doesn't match an API route, serve the React app
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../dist/index.html'));
-    });
-}
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
