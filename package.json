@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "build-client": "cd ./client/ && npm run build && cd ..",
-    "prestart": "npm run build-client",
     "dev": "nodemon index.js",
     "predev": "npm run build-client"
   },
