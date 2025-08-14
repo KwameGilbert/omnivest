@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "build-client": "cd ./client/ && npm run build && cd ..",
-    "dev": "nodemon index.js",
-    "predev": "npm run build-client"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

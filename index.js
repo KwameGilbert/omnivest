@@ -67,8 +67,8 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 // Catch-all handler for client-side routing
-app.get('*', async (req, res) => {
-    res.send(path.resolve('./dist', 'index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Add this before app.listen()
