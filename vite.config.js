@@ -5,16 +5,8 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-      }
-    },
-  },
   build: {
-    outDir: '../dist',  // Output to parent directory so Express can find it
+    outDir: './dist',  // Output to parent directory so Express can find it
     emptyOutDir: true,
   },
   resolve: {
