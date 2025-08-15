@@ -89,7 +89,7 @@ const Footer = () => {
                                         </Link>
                                     </motion.div>
                                 </li>
-                            ))};
+                            ))}
                         </ul>
                     </motion.div>
 
