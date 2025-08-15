@@ -156,7 +156,7 @@ const HeroBanner = () => {
             className="flex flex-col sm:flex-row justify-center gap-4 pt-6"
           >
             {/* Primary Button: Yellow background, Dark text */}
-            <motion.button
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
@@ -164,13 +164,13 @@ const HeroBanner = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
             >
-              <Link to="/services">
-              Our services
+              <Link to="/intake-form" className="w-full h-full flex items-center justify-center">
+                Apply Now
               </Link>
-            </motion.button>
+            </motion.div>
 
             {/* Secondary Button: Dark border, Dark text, Yellow hover */}
-            <motion.button
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
@@ -178,8 +178,10 @@ const HeroBanner = () => {
               whileTap={{ scale: 0.95 }}
               className="border-2 border-[#111827] bg-transparent text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#f3f4f6] hover:border-[#f59e0b] transition-all"
             >
-              Learn more <ArrowRight className="w-4 h-4 text-current" />
-            </motion.button>
+              <Link to="/services" className="w-full h-full flex items-center justify-center gap-2">
+                Learn more <ArrowRight className="w-4 h-4 text-current" />
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

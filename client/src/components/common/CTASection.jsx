@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
@@ -18,13 +19,17 @@ const CTASection = () => {
             Book a free consultation to discuss your study abroad goals and learn how we can help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-gray-500 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
             >
-              Book Free Consultation
-            </motion.button>
+              <Link 
+                to='/intake-form'
+                className="bg-white text-gray-500 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow block"
+              >
+                Book Free Consultation
+              </Link>
+            </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

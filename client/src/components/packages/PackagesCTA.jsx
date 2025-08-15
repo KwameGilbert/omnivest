@@ -22,15 +22,15 @@ const PackagesCTA = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
-                                to="/contact"
+                                to="/intake-form"
                                 className="bg-white text-gray-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow block"
                             >
-                                Book Free Consultation
+                                Start Application
                             </Link>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
-                                to="/packages"
+                                to="/contact"
                                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors block"
                             >
                                 Get Custom Quote

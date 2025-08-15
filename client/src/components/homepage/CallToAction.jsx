@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const CallToAction = () => {
@@ -53,15 +54,16 @@ const CallToAction = () => {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className="mb-12"
                     >
-                        <motion.button
+                        <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-12 py-6 rounded-xl font-bold text-xl flex items-center gap-3 mx-auto hover:shadow-2xl transition-shadow"
                         >
-                            <Calendar className="w-6 h-6" />
-                            Book a Free Consultation
-                            <ArrowRight className="w-6 h-6" />
-                        </motion.button>
+                            <Link to="/intake-form" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-12 py-6 rounded-xl font-bold text-xl flex items-center gap-3 mx-auto hover:shadow-2xl transition-shadow">
+                                <Calendar className="w-6 h-6" />
+                                Start Your Application
+                                <ArrowRight className="w-6 h-6" />
+                            </Link>
+                        </motion.div>
                     </motion.div>
 
                     {/* Contact Options */}

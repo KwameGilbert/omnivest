@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const ServiceCard = ({ service, index }) => {
@@ -27,14 +28,19 @@ const ServiceCard = ({ service, index }) => {
         ))}
       </div>
       
-      <motion.button
+      <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`w-full mt-6 bg-gradient-to-r ${service.color} text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center space-x-2`}
+        className="w-full"
       >
-        <span>Learn More</span>
-        <ArrowRight className="w-4 h-4" />
-      </motion.button>
+        <Link 
+          to="/intake-form"
+          className={`w-full mt-6 bg-gradient-to-r ${service.color} text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center space-x-2`}
+        >
+          <span>Get Started</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </motion.div>
     </motion.div>
   );
 };
