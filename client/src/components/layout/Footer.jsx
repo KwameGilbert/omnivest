@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -76,15 +77,18 @@ const Footer = () => {
                         <ul className="space-y-3">
                             {quickLinks.map((link, index) => (
                                 <li key={index}>
-                                    <motion.a
-                                        href={link.href}
+                                    <motion.div
                                         whileHover={{ x: 5 }}
-                                        className="text-gray-300 hover:text-orange-400 transition-colors"
                                     >
-                                        {link.name}
-                                    </motion.a>
+                                        <Link
+                                            to={`/${link.href}`}
+                                            className="text-gray-300 hover:text-orange-400 transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
                                 </li>
-                            ))}
+                            ))};
                         </ul>
                     </motion.div>
 
@@ -99,13 +103,13 @@ const Footer = () => {
                         <ul className="space-y-3">
                             {services.map((service, index) => (
                                 <li key={index}>
-                                    <motion.a
-                                        href={service.href}
-                                        whileHover={{ x: 5 }}
-                                        className="text-gray-300 hover:text-orange-400 transition-colors"
+                                    <motion.div
+                                       whileHover={{ x: 5 }}
                                     >
+                                        <Link to={`/${service.href}`}  className="text-gray-300 hover:text-orange-400 transition-colors" >
                                         {service.name}
-                                    </motion.a>
+                                        </Link>
+                                    </motion.div>
                                 </li>
                             ))}
                         </ul>
@@ -160,29 +164,34 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} Omnivest Education Consult. All rights reserved.
                     </p>
                     
-                    <div className="flex space-x-6 text-sm">
-                        <motion.a
-                            href="/privacy"
-                            whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-orange-400 transition-colors"
-                        >
-                            Privacy Policy
-                        </motion.a>
-                        <motion.a
-                            href="/terms"
-                            whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-orange-400 transition-colors"
-                        >
-                            Terms of Service
-                        </motion.a>
-                        <motion.a
-                            href="/cookies"
-                            whileHover={{ y: -2 }}
-                            className="text-gray-400 hover:text-orange-400 transition-colors"
-                        >
-                            Cookie Policy
-                        </motion.a>
-                    </div>
+                <div>
+    <div className="flex space-x-6 text-sm">
+        <motion.div whileHover={{ y: -2 }}>
+            <Link
+                to="/privacy"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
+                Privacy Policy
+            </Link>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }}>
+            <Link
+                to="/terms"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
+                Terms of Service
+            </Link>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }}>
+            <Link
+                to="/cookies"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
+                Cookie Policy
+            </Link>
+        </motion.div>
+    </div>
+</div>
                 </motion.div>
             </div>
         </footer>

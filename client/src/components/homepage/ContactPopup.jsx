@@ -149,7 +149,7 @@ const ContactPopup = ({ showDelay = 9000 }) => {
                                     id="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-1 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="Your Name"
                                     required
                                     disabled={isSubmitting}
@@ -162,7 +162,7 @@ const ContactPopup = ({ showDelay = 9000 }) => {
                                     id="phone"
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-1 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="e.g., +1234567890"
                                     disabled={isSubmitting}
                                 />
@@ -174,7 +174,7 @@ const ContactPopup = ({ showDelay = 9000 }) => {
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:ring-1 focus:ring-orange-500 focus:border-transparent transition-all"
                                     placeholder="your.email@example.com"
                                     disabled={isSubmitting}
                                 />
@@ -183,7 +183,7 @@ const ContactPopup = ({ showDelay = 9000 }) => {
                                 type="submit"
                                 whileHover={{ scale: 1.02, boxShadow: "0 5px 15px -3px rgba(79, 70, 229, 0.4)" }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-orange-400 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-1 focus:ring-orange-600 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Submitting...' : 'Submit'}

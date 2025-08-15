@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Typed from 'typed.js';
 
@@ -161,9 +162,11 @@ const HeroBanner = () => {
               transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#111827] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
+              className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
             >
+              <Link to="/services">
               Our services
+              </Link>
             </motion.button>
 
             {/* Secondary Button: Dark border, Dark text, Yellow hover */}

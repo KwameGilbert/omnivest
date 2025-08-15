@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const HeroSection = ({ title, subtitle, gradientText }) => {
   return (
-    <section className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white py-20">
+    <section className="bg-gray-500 text-white py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
