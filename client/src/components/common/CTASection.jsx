@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <section className="py-20 bg-gradient-to-r from-gray-300 to-gray-500 text-white">
       <div className="container mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -21,17 +21,20 @@ const CTASection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
+              className="bg-white text-gray-500 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
             >
               Book Free Consultation
             </motion.button>
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors"
             >
+              <Link 
+              to='/packages'
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
               View Packages
-            </motion.button>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

@@ -9,7 +9,7 @@ const ProcessStep = ({ item, index }) => {
       transition={{ duration: 0.8, delay: index * 0.1 }}
       className="flex items-center space-x-6"
     >
-      <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+      <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
         {item.step}
       </div>
       <div>

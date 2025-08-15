@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView} from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
@@ -157,14 +157,17 @@ const FAQSection = () => {
                         Our expert consultants are here to help. Book a free consultation to get personalized answers.
                     </p>
                     
-                    <motion.button
+                    <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        // CTA button uses the accent orange/yellow gradient
-                        className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
                     >
-                        Book Free Consultation
-                    </motion.button>
+                        <Link
+                            to="/contact"
+                            className="inline-block bg-gradient-to-r from-[#f59e0b] to-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+                        >
+                            Book Free Consultation
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>

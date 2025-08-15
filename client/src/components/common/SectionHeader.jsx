@@ -11,7 +11,7 @@ const SectionHeader = ({ title, highlightText, description }) => {
     >
       <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
         {title}{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
           {highlightText}
         </span>
       </h2>

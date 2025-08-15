@@ -15,9 +15,7 @@ const Services = () => {
       />
       
       <ServicesSection services={coreServices} />
-      
       <ProcessSection />
-      
       <CTASection />
     </div>
   );
