@@ -22,10 +22,6 @@ const FAQSection = () => {
             question: "Are your services paid?",
             answer: "No, our services are not paid. We're committed to making education abroad accessible to everyone."
         },
-        // {
-        //     question: "Do you help with scholarships?",
-        //     answer: "Absolutely! We help identify scholarship opportunities and guide you through the application process to maximize your chances of securing financial aid."
-        // },
         {
             question: "What visa support do you provide?",
             answer: "We provide comprehensive visa support including document preparation, application submission, interview coaching, and follow-up until visa approval."
