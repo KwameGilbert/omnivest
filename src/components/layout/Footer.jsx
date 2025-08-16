@@ -169,7 +169,7 @@ const Footer = () => {
     <div className="flex space-x-6 text-sm">
         <motion.div whileHover={{ y: -2 }}>
             <Link
-                to="/privacy"
+                to="/privacy-policy"
                 className="text-gray-400 hover:text-orange-400 transition-colors"
             >
                 Privacy Policy

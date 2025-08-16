@@ -6,6 +6,7 @@ import Services from './../pages/services/Services';
 import Packages from './../pages/packages/Packages';
 import Contact from './../pages/contact/Contact';
 import IntakeForm from './../pages/study-abroad/IntakeForm';
+import PrivacyPolicy from './../pages/privacy-policy/PrivacyPolicy';
 import TestPage from '../pages/TestPage';
 
 
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path="/packages" element={<Packages />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/intake-form" element={<IntakeForm />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/test" element={<TestPage />} />
             {/* Add other routes here */}
         </Routes>

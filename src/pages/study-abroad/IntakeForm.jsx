@@ -441,7 +441,7 @@ const IntakeForm = () => {
           )}
           
           <p className="text-xs text-gray-500 mt-4 text-center">
-            By submitting this form, you agree to our <a href="#" className="text-orange-500 underline">Privacy Policy</a> and consent to being contacted regarding your application.
+            By submitting this form, you agree to our <Link to="/privacy-policy" className="text-orange-500 underline">Privacy Policy</Link> and consent to being contacted regarding your application.
           </p>
         </form>
         </div>
