@@ -82,7 +82,7 @@ const Footer = () => {
                                         whileHover={{ x: 5 }}
                                     >
                                         <Link
-                                            to={`/${link.href}`}
+                                            to={`${link.href}`}
                                             className="text-gray-300 hover:text-orange-400 transition-colors"
                                         >
                                             {link.name}
