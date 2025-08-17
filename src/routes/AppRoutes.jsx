@@ -9,6 +9,7 @@ import IntakeForm from './../pages/study-abroad/IntakeForm';
 import PrivacyPolicy from './../pages/privacy-policy/PrivacyPolicy';
 import FAQs from './../pages/faqs/FAQs';
 import SuccessStories from './../pages/success-stories/SuccessStories';
+import Booking from './../pages/booking/Booking';
 import TestPage from '../pages/TestPage';
 
 
@@ -25,6 +26,7 @@ const AppRoutes = () => {
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/booking" element={<Booking />} />
             <Route path="/test" element={<TestPage />} />
             {/* Add other routes here */}
         </Routes>

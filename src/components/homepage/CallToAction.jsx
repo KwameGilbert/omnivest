@@ -58,9 +58,9 @@ const CallToAction = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Link to="/intake-form" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-12 py-6 rounded-xl font-bold text-xl flex items-center gap-3 mx-auto hover:shadow-2xl transition-shadow">
+                            <Link to="/booking" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-12 py-6 rounded-xl font-bold text-xl flex items-center gap-3 mx-auto hover:shadow-2xl transition-shadow">
                                 <Calendar className="w-6 h-6" />
-                                Start Your Application
+                                Book a Consultation
                                 <ArrowRight className="w-6 h-6" />
                             </Link>
                         </motion.div>
@@ -93,15 +93,17 @@ const CallToAction = () => {
                             <p className="text-yellow-400 font-semibold">info@omnivest.com</p>
                         </motion.div>
 
-                        <motion.div 
-                            whileHover={{ y: -5 }}
-                            className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 border border-white border-opacity-20"
-                        >
-                            <Calendar className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-                            <h3 className="text-xl font-semibold mb-2">Schedule Online</h3>
-                            <p className="text-gray-300 mb-4">Book at your convenience</p>
-                            <p className="text-yellow-400 font-semibold">24/7 Available</p>
-                        </motion.div>
+                        <Link to="/booking">
+                            <motion.div 
+                                whileHover={{ y: -5 }}
+                                className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 border border-white border-opacity-20"
+                            >
+                                <Calendar className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                                <h3 className="text-xl font-semibold mb-2">Schedule Online</h3>
+                                <p className="text-gray-300 mb-4">Book at your convenience</p>
+                                <p className="text-yellow-400 font-semibold">24/7 Available</p>
+                            </motion.div>
+                        </Link>
                     </motion.div>
 
                     {/* Additional Benefits */}

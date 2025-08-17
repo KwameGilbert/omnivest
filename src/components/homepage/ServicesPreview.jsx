@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { GraduationCap, FileText, Plane, Home, MapPin, Users } from 'lucide-react';
 
 const ServicesPreview = () => {
@@ -48,6 +49,7 @@ const ServicesPreview = () => {
         }
     ];
 
+    // Ensure Link is imported: 
     return (
         // Section background: Harmony Light
         <section ref={ref} className="py-20 bg-[#f3f4f6]">
@@ -106,13 +108,6 @@ const ServicesPreview = () => {
                                 {service.description}
                             </p>
                             
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="text-[#f59e0b] font-semibold hover:text-[#f97316] transition-colors"
-                            >
-                                Learn More →
-                            </motion.button>
                         </motion.div>
                     ))}
                 </div>
@@ -130,6 +125,7 @@ const ServicesPreview = () => {
                     </p>
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                         <Link to="/booking" className="rounded-lg">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -137,14 +133,17 @@ const ServicesPreview = () => {
                         >
                             Book Free Consultation
                         </motion.button>
+                        </Link>
                         
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#f59e0b] transition-colors"
-                        >
-                            View All Services
-                        </motion.button>
+                        <Link to="/services" className="rounded-lg">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#f59e0b] transition-colors"
+                            >
+                                View All Services
+                            </motion.button>
+                        </Link>
                     </div>
                 </motion.div>
             </div>

@@ -8,7 +8,7 @@ import { coreServices } from '../../data/servicesData';
 const Services = () => {
   return (
     <div className="min-h-screen bg-white">
-      <HeroSection 
+      <HeroSection  
         title="Our"
         gradientText="Services"
         subtitle="Comprehensive support for every step of your international education journey."

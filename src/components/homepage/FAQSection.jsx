@@ -140,31 +140,7 @@ const FAQSection = () => {
                     ))}
                 </div>
 
-                {/* CTA Section */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    // CTA background uses a very subtle gradient from the accent colors
-                    className="text-center mt-12 bg-gradient-to-r from-[#f59e0b]/5 to-[#f97316]/5 p-8 rounded-xl"
-                >
-                    <h3 className="text-2xl font-bold text-[#111827] mb-4">Still Have Questions?</h3>
-                    <p className="text-[#111827]/85 mb-6">
-                        Our expert consultants are here to help. Book a free consultation to get personalized answers.
-                    </p>
-                    
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-gradient-to-r from-[#f59e0b] to-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
-                        >
-                            Book Free Consultation
-                        </Link>
-                    </motion.div>
-                </motion.div>
+             
             </div>
         </section>
     );

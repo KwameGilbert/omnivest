@@ -91,14 +91,14 @@ const EmailService = {
      * @returns {Promise} Send result
      */
     sendUserThankYouEmail: async (formData) => {
-        const { name, email, service = 'our services' } = formData;
+        const { name, email } = formData;
 
         if (!email) return { success: false, message: 'Email address required' };
 
         const content = `
       <p>Dear ${name},</p>
       
-      <p>Thank you for reaching out to OmniVest Education Consult regarding ${service}.</p>
+      <p>Thank you for reaching out to OmniVest Education Consult.</p>
       
       <p>We have received your inquiry and our team will review your message promptly. 
       Someone will get back to you within 24-48 business hours.</p>
@@ -127,7 +127,6 @@ const EmailService = {
             name,
             email,
             phone = 'Not provided',
-            service = 'Not specified',
             message
         } = formData;
 
@@ -138,7 +137,7 @@ const EmailService = {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Service Interest:</strong> ${service}</p>
+
         
         <div style="margin-top: 15px;">
           <p><strong>Message:</strong></p>
@@ -149,7 +148,7 @@ const EmailService = {
 
         const emailData = {
             to: ADMIN_EMAIL,
-            subject: `New Contact Form Submission: ${service}`,
+            subject: `New Contact Form Submission from: ${name}`,
             html: createEmailTemplate('New Contact Form Submission', content),
             replyTo: email,
             name: name
@@ -208,6 +207,110 @@ const EmailService = {
         };
 
         return sendEmail(emailData);
+    },
+
+    /**
+     * Send booking form submission notification to admin
+     * @param {Object} formData - Booking form data
+     * @returns {Promise} Send result
+     */
+    sendBookingNotification: async (formData) => {
+        const {
+            name,
+            email,
+            phone = 'Not provided',
+            preferredDate,
+            preferredTime,
+            message = 'No additional information provided'
+        } = formData;
+
+        const content = `
+          <p>You have received a new booking request with the following details:</p>
+          
+          <div style="background-color: #f3f4f6; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Preferred Date:</strong> ${preferredDate}</p>
+            <p><strong>Preferred Time:</strong> ${preferredTime}</p>
+            
+            <div style="margin-top: 15px;">
+              <p><strong>Additional Information:</strong></p>
+              <p style="background-color: white; padding: 10px; border-radius: 4px;">${message}</p>
+            </div>
+          </div>
+        `;
+
+        const emailData = {
+            to: ADMIN_EMAIL,
+            subject: `New Consultation Booking Request: ${name}`,
+            html: createEmailTemplate('New Booking Request', content),
+            replyTo: email,
+            name: name
+        };
+
+        return sendEmail(emailData);
+    },
+
+    /**
+     * Send thank you email to user who submitted booking form
+     * @param {Object} formData - Booking form data
+     * @returns {Promise} Send result
+     */
+    sendBookingConfirmationEmail: async (formData) => {
+        const { name, email, preferredDate, preferredTime } = formData;
+
+        if (!email) return { success: false, message: 'Email address required' };
+
+        const content = `
+          <p>Dear ${name},</p>
+          
+          <p>Thank you for booking a consultation with OmniVest Education Consult.</p>
+          
+          <p>We have received your request for a consultation on <strong>${preferredDate}</strong> at <strong>${preferredTime}</strong>.</p>
+          
+          <p>Our team will review your requested time and confirm the appointment shortly. You will receive a calendar invitation with the final confirmation and meeting details.</p>
+          
+          <p>If you need to reschedule or have any questions before your consultation, please contact us at +233 XX XXX XXXX or reply to this email.</p>
+          
+          <p>We look forward to speaking with you!</p>
+          
+          <p>Best regards,<br>The OmniVest Education Consult Team</p>
+        `;
+
+        const emailData = {
+            to: email,
+            subject: 'Your Consultation Request with OmniVest Education',
+            html: createEmailTemplate('Booking Confirmation', content)
+        };
+
+        return sendEmail(emailData);
+    },
+
+    /**
+     * Send both admin notification and user confirmation emails for booking form
+     * @param {Object} formData - Booking form data 
+     * @returns {Promise} Combined send results
+     */
+    handleBookingSubmission: async (formData) => {
+        try {
+            // Send notification to admin
+            const adminEmailResult = await EmailService.sendBookingNotification(formData);
+
+            // Send confirmation email to user
+            const userEmailResult = await EmailService.sendBookingConfirmationEmail(formData);
+
+            return {
+                success: adminEmailResult.success && userEmailResult.success,
+                message: 'Booking request processed successfully'
+            };
+        } catch (error) {
+            console.error('Error handling booking form:', error);
+            return {
+                success: false,
+                message: 'Failed to process booking request'
+            };
+        }
     }
 };
 

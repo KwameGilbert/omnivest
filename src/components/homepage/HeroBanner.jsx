@@ -164,8 +164,8 @@ const HeroBanner = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
             >
-              <Link to="/intake-form" className="w-full h-full flex items-center justify-center">
-                Apply Now
+              <Link to="/booking" className="w-full h-full flex items-center justify-center">
+                Book Consultation
               </Link>
             </motion.div>
 

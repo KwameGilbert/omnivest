@@ -16,10 +16,7 @@ const Homepage = () => {
             <HeroBanner />
             <BriefAbout />
             <ServicesPreview />
-            <WhyStudyAbroad />
-            {/* <PopularDestinations /> */}
-            {/* <PackagesTeaser /> */}
-            {/* <AddOnServices /> */}
+            <WhyStudyAbroad />         
             <TestimonialCarousel />
             <FAQSection />
             {/* <CallToAction /> */}

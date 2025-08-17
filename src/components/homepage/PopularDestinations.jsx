@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { MapPin, Users, Star } from 'lucide-react';
 
@@ -190,13 +191,15 @@ const PopularDestinations = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="text-center mt-16"
                 >
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
-                    >
-                        View All Destinations
-                    </motion.button>
+                    <Link to="/services">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow"
+                        >
+                            Explore Our Services
+                        </motion.button>
+                    </Link>
                 </motion.div>
             </div>
         </section>

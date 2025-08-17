@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import EmailService from '../../services/EmailService';
 
 const ContactPopup = ({ showDelay = 9000 }) => {
@@ -183,11 +184,23 @@ const ContactPopup = ({ showDelay = 9000 }) => {
                                 type="submit"
                                 whileHover={{ scale: 1.02, boxShadow: "0 5px 15px -3px rgba(79, 70, 229, 0.4)" }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full bg-orange-400 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-1 focus:ring-orange-600 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-orange-400 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-1 focus:ring-orange-600 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed mb-3"
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Submitting...' : 'Submit'}
                             </motion.button>
+                            
+                            <Link to="/booking" className="block text-center">
+                                <motion.button
+                                    type="button"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                                >
+                                    <Calendar className="w-4 h-4" />
+                                    Book a Consultation
+                                </motion.button>
+                            </Link>
                         </form>
                     </motion.div>
                 </motion.div>

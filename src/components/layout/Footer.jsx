@@ -15,21 +15,21 @@ const Footer = () => {
     const quickLinks = [
         { name: "About Us", href: "/about" },
         { name: "Services", href: "/services" },
-        { name: "Destinations", href: "/destinations" },
         { name: "Packages", href: "/packages" },
+        { name: "Book Consultation", href: "/booking" },
         { name: "Application Form", href: "/intake-form" },
         { name: "FAQs", href: "/faqs" },
-    { name: "Success Stories", href: "/success-stories" },
+        { name: "Success Stories", href: "/success-stories" },
         { name: "Contact", href: "/contact" }
     ];
 
     const services = [
-        { name: "University Selection", href: "/services/university-selection" },
-        { name: "Application Support", href: "/services/application" },
-        { name: "Visa Assistance", href: "/services/visa" },
-        { name: "Financial Planning", href: "/services/financial" },
-        { name: "Pre-departure", href: "/services/pre-departure" },
-        { name: "Ongoing Support", href: "/services/support" }
+        { name: "University Selection", href: "/services" },
+        { name: "Application Support", href: "/services" },
+        { name: "Visa Assistance", href: "/services" },
+        { name: "Financial Planning", href: "/services" },
+        { name: "Pre-departure", href: "/services" },
+        { name: "Ongoing Support", href: "/services" }
     ];
 
     return (
@@ -108,7 +108,7 @@ const Footer = () => {
                                     <motion.div
                                        whileHover={{ x: 5 }}
                                     >
-                                        <Link to={`/${service.href}`}  className="text-gray-300 hover:text-orange-400 transition-colors" >
+                                        <Link to={service.href}  className="text-gray-300 hover:text-orange-400 transition-colors" >
                                         {service.name}
                                         </Link>
                                     </motion.div>

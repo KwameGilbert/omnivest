@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const TestimonialCarousel = () => {
     const ref = useRef(null);
@@ -15,18 +15,16 @@ const TestimonialCarousel = () => {
             country: "USA",
             university: "Harvard University",
             program: "MBA",
-            image: "🇺🇸",
-            rating: 5,
+            image: "/images/testimonials/student1.jpg", 
             text: "Omnivest made my dream of studying at Harvard a reality. Their guidance through the application process was invaluable, and the financial planning advice helped my family manage the costs effectively.",
             year: "2023"
         },
         {
             name: "Priya Sharma",
-            country: "Canada",
+            country: "India",
             university: "University of Toronto",
             program: "Computer Science",
-            image: "🇨🇦",
-            rating: 5,
+            image: "/images/testimonials/student2.jpg",
             text: "The team at Omnivest went above and beyond to help me secure admission and scholarships. Their visa assistance was thorough and stress-free. I couldn't have done it without them!",
             year: "2023"
         },
@@ -35,28 +33,25 @@ const TestimonialCarousel = () => {
             country: "Australia",
             university: "University of Melbourne",
             program: "Engineering",
-            image: "🇦🇺",
-            rating: 5,
+            image: "/images/testimonials/student3.jpg",
             text: "From university selection to pre-departure orientation, Omnivest supported me every step of the way. Their expertise and personal attention made all the difference in my journey.",
             year: "2022"
         },
         {
             name: "Maria Rodriguez",
-            country: "UK",
+            country: "Spain",
             university: "Oxford University",
             program: "Medicine",
-            image: "🇬🇧",
-            rating: 5,
+            image: "/images/testimonials/student4.jpg",
             text: "Getting into Oxford seemed impossible until I found Omnivest. Their strategic approach to applications and interview preparation was exceptional. Highly recommended!",
             year: "2023"
         },
         {
             name: "Ahmed Hassan",
-            country: "Germany",
+            country: "Egypt",
             university: "Technical University Munich",
             program: "Mechanical Engineering",
-            image: "🇩🇪",
-            rating: 5,
+            image: "/images/testimonials/student5.jpg",
             text: "Omnivest's knowledge of German universities and scholarship opportunities saved me thousands of dollars. Their ongoing support even after arrival has been incredible.",
             year: "2022"
         }
@@ -131,29 +126,46 @@ const TestimonialCarousel = () => {
                             <div className="grid md:grid-cols-3 gap-8 items-center">
                                 {/* Student Info */}
                                 <div className="text-center md:text-left">
-                                    <div className="text-6xl mb-4">{testimonials[currentIndex].image}</div>
+                                    <div className="mb-6 overflow-hidden rounded-full w-40 h-40 mx-auto md:mx-0 border-4 border-indigo-100 shadow-lg">
+                                        <img 
+                                            src={testimonials[currentIndex].image} 
+                                            alt={testimonials[currentIndex].name}
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src = "https://via.placeholder.com/150?text=Student";
+                                            }}
+                                        />
+                                    </div>
                                     <h3 className="text-2xl font-bold text-gray-800 mb-2">
                                         {testimonials[currentIndex].name}
                                     </h3>
                                     <p className="text-indigo-600 font-semibold mb-2">
                                         {testimonials[currentIndex].program}
                                     </p>
-                                    <p className="text-gray-600 mb-4">
+                                    <p className="text-gray-600 mb-1">
                                         {testimonials[currentIndex].university}
                                     </p>
-                                    <div className="flex justify-center md:justify-start items-center space-x-1 mb-2">
-                                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                            <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
-                                        ))}
-                                    </div>
+                                    <p className="text-gray-600 mb-2 font-medium">
+                                        {testimonials[currentIndex].country}
+                                    </p>
                                     <p className="text-gray-500 text-sm">Class of {testimonials[currentIndex].year}</p>
                                 </div>
 
                                 {/* Testimonial Text */}
                                 <div className="md:col-span-2">
-                                    <blockquote className="text-lg text-gray-700 leading-relaxed italic">
-                                        "{testimonials[currentIndex].text}"
-                                    </blockquote>
+                                    <div className="h-full flex flex-col justify-center">
+                                        <blockquote className="text-lg text-gray-700 leading-relaxed italic">
+                                            "{testimonials[currentIndex].text}"
+                                        </blockquote>
+                                        <div className="mt-4 flex items-center">
+                                            <div className="flex items-center space-x-1">
+                                                <span className="inline-flex items-center justify-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+                                                    {testimonials[currentIndex].university}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -183,37 +195,13 @@ const TestimonialCarousel = () => {
                             onClick={() => setCurrentIndex(index)}
                             className={`w-3 h-3 rounded-full transition-colors ${
                                 index === currentIndex
-                                    ? 'bg-indigo-600'
+                                    ? 'bg-orange-600'
                                     : 'bg-gray-300 hover:bg-gray-400'
                             }`}
                         />
                     ))}
                 </div>
 
-                {/* Stats Section */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="grid md:grid-cols-4 gap-8 mt-16 text-center"
-                >
-                    <div>
-                        <div className="text-3xl font-bold text-indigo-600 mb-2">98%</div>
-                        <div className="text-gray-600">Success Rate</div>
-                    </div>
-                    <div>
-                        <div className="text-3xl font-bold text-indigo-600 mb-2">4.9/5</div>
-                        <div className="text-gray-600">Average Rating</div>
-                    </div>
-                    <div>
-                        <div className="text-3xl font-bold text-indigo-600 mb-2">2500+</div>
-                        <div className="text-gray-600">Happy Students</div>
-                    </div>
-                    <div>
-                        <div className="text-3xl font-bold text-indigo-600 mb-2">50+</div>
-                        <div className="text-gray-600">Partner Universities</div>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

@@ -15,7 +15,7 @@ const StoryCard = ({ story, onOpen }) => (
     <p className="text-sm text-gray-700 mt-3 line-clamp-3">{story.testimonial}</p>
     <div className="mt-4 flex gap-2">
       <button onClick={() => onOpen(story)} className="text-orange-500 underline" aria-haspopup="dialog">View Details</button>
-      <Link to="/intake-form" className="ml-auto inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-2 rounded">Get Help</Link>
+      <Link to="/booking" className="ml-auto inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-2 rounded">Get Help</Link>
     </div>
   </motion.div>
 );
@@ -149,7 +149,7 @@ const SuccessStories = () => {
               </div>
               <div className="mt-6 flex justify-end gap-3">
                 <button ref={closeButtonRef} onClick={() => setActive(null)} className="px-4 py-2 bg-gray-200 rounded">Close</button>
-                <Link to="/intake-form" className="px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded">Get Started</Link>
+                <Link to="/booking" className="px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded">Get Started</Link>
               </div>
             </motion.div>
           </div>

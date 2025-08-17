@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import EmailService from '../../services/EmailService';
 
 const ContactForm = () => {
@@ -8,7 +9,6 @@ const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        service: '',
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,7 +40,6 @@ const ContactForm = () => {
                     name: '',
                     email: '',
                     phone: '',
-                    service: '',
                     message: ''
                 });
             } else {
@@ -97,32 +96,15 @@ const ContactForm = () => {
                                 </div>
                             </div>
                             
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-gray-700 font-semibold mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleInputChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-gray-700 font-semibold mb-2">Service Interest</label>
-                                    <select
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleInputChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                                    >
-                                        <option value="">Select a service</option>
-                                        <option value="basic">Basic Package</option>
-                                        <option value="standard">Standard Package</option>
-                                        <option value="premium">Premium Package</option>
-                                        <option value="consultation">Free Consultation</option>
-                                    </select>
-                                </div>
+                            <div>
+                                <label className="block text-gray-700 font-semibold mb-2">Phone</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                                />
                             </div>
                             
                             <div>
@@ -195,13 +177,15 @@ const ContactForm = () => {
                                 Not sure where to start? Book a free 30-minute consultation with our experts 
                                 to discuss your goals and learn about our services.
                             </p>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
-                            >
-                                Schedule Free Call
-                            </motion.button>
+                            <Link to="/booking">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+                                >
+                                    Schedule Free Call
+                                </motion.button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>

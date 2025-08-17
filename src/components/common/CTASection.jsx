@@ -24,7 +24,7 @@ const CTASection = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                to='/intake-form'
+                to='/booking'
                 className="bg-white text-gray-500 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow block"
               >
                 Book Free Consultation

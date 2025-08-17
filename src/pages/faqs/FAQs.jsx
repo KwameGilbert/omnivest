@@ -11,7 +11,7 @@ const faqs = [
     q: 'How do I get started?',
     a: (
       <>
-        Start by completing our <Link to="/intake-form" className="text-orange-500 underline">Study Abroad Intake Form</Link>. Our advisors will review your details and get in touch for a free consultation.
+        Start by <Link to="/booking" className="text-orange-500 underline">booking a free consultation</Link> or completing our <Link to="/intake-form" className="text-orange-500 underline">Study Abroad Intake Form</Link>. Our advisors will review your details and get in touch.
       </>
     )
   },
@@ -101,8 +101,9 @@ const FAQs = () => {
             ))}
           </dl>
 
-          <div className="mt-8 text-center">
-            <Link to="/intake-form" className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">Start Your Application</Link>
+          <div className="mt-8 text-center flex justify-center gap-4 flex-wrap">
+            <Link to="/booking" className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">Book a Consultation</Link>
+            <Link to="/intake-form" className="inline-block bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">Start Your Application</Link>
           </div>
         </div>
       </div>

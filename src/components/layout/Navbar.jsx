@@ -75,7 +75,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link 
-                  to="/intake-form"
+                  to="/booking"
                   className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-all duration-300 border border-orange-600 shadow-sm block"
                 >
                   Get Started
@@ -134,7 +134,7 @@ const Navbar = () => {
                 className="mt-2"
               >
                 <Link
-                  to="/intake-form"
+                  to="/booking"
                   onClick={() => setIsMenuOpen(false)}
                   // Mobile CTA button matches desktop
                   className="w-full bg-[#f59e0b] text-[#f3f4f6] py-3 px-4 rounded-lg font-semibold hover:bg-[#111827] transition-all duration-300 border border-[#f59e0b] block text-center"

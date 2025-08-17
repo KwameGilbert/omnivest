@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Globe, BookOpen, Users, Trophy } from 'lucide-react';
 
 const WhyStudyAbroad = () => {
@@ -100,6 +101,7 @@ const WhyStudyAbroad = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="text-center mt-16"
                 >
+                     <Link to="/intake-form" className="rounded-lg">
                     <motion.button
                         whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(251, 146, 60, 0.4)" }} // Updated shadow color
                         whileTap={{ scale: 0.95 }}
@@ -107,6 +109,7 @@ const WhyStudyAbroad = () => {
                     >
                         Start Your Journey Today
                     </motion.button>
+                    </Link>
                 </motion.div>
             </div>
         </section>
