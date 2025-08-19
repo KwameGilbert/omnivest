@@ -28,7 +28,8 @@ const AppRoutes = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/test" element={<TestPage />} />
-            {/* Add other routes here */}
+            {/* Fallback to home for unmatched routes */}
+            <Route path="*" element={<Homepage />} />
         </Routes>
     );
 };
