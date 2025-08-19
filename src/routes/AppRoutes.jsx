@@ -10,14 +10,12 @@ import PrivacyPolicy from './../pages/privacy-policy/PrivacyPolicy';
 import FAQs from './../pages/faqs/FAQs';
 import SuccessStories from './../pages/success-stories/SuccessStories';
 import Booking from './../pages/booking/Booking';
-import TestPage from '../pages/TestPage';
-
 
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/home" element={<Homepage />} />
+            {/* Main routes */}
+            <Route index element={<Homepage />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/packages" element={<Packages />} />
@@ -27,8 +25,8 @@ const AppRoutes = () => {
             <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/booking" element={<Booking />} />
-            <Route path="/test" element={<TestPage />} />
-            {/* Fallback to home for unmatched routes */}
+            
+            {/* Use a dedicated route for 404 Not Found pages */}
             <Route path="*" element={<Homepage />} />
         </Routes>
     );
