@@ -1,5 +1,5 @@
 const config = {
-    API_URL: 'https://omnivest-api.onrender.com:3000',
+    API_URL: 'https://omnivest-api.onrender.com',
     ADMIN_EMAIL: 'gkukah1@gmail.com'
 };
 
