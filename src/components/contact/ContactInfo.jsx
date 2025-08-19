@@ -7,7 +7,7 @@ const ContactInfo = () => {
         {
             icon: <Phone className="w-8 h-8" />,
             title: "Phone",
-            details: ["+233 XX XXX XXXX", "+1 XXX XXX XXXX"],
+            details: ["055 208 8069"],
             color: "from-blue-500 to-blue-600"
         },
         {
@@ -19,7 +19,7 @@ const ContactInfo = () => {
         {
             icon: <MapPin className="w-8 h-8" />,
             title: "Office",
-            details: ["Accra, Ghana", "Toronto, Canada"],
+            details: ["Mama Adjele Rd", "GA-189-4930, Spintex", "Ghana"],
             color: "from-amber-400 to-orange-600"
         },
         {

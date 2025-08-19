@@ -130,17 +130,17 @@ const Footer = () => {
                                 <MapPin className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                                 <div>
                                     <p className="text-gray-300">
-                                        123 Education Street,<br />
-                                        Academic District,<br />
-                                        New York, NY 10001
+                                        Mama Adjele Rd<br />
+                                        GA-189-4930, Spintex<br />
+                                        Ghana
                                     </p>
                                 </div>
                             </div>
                             
                             <div className="flex items-center space-x-3">
                                 <Phone className="w-5 h-5 text-orange-400" />
-                                <a href="tel:+15551234567" className="text-gray-300 hover:text-orange-400 transition-colors">
-                                    +1 (555) 123-4567
+                                <a href="tel:+233552088069" className="text-gray-300 hover:text-orange-400 transition-colors">
+                                    055 208 8069
                                 </a>
                             </div>
                             

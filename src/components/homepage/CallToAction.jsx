@@ -80,7 +80,7 @@ const CallToAction = () => {
                             <Phone className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Call Us</h3>
                             <p className="text-gray-300 mb-4">Speak directly with our counselors</p>
-                            <p className="text-yellow-400 font-semibold">+1 (555) 123-4567</p>
+                            <p className="text-yellow-400 font-semibold">055 208 8069</p>
                         </motion.div>
 
                         <motion.div 

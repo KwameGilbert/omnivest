@@ -365,7 +365,7 @@ const Booking = () => {
                                     <ul className="space-y-3 text-gray-700">
                                         <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                                             <Phone className="w-5 h-5 mr-3 text-orange-500" /> 
-                                            <span>+1 (555) 123-4567</span>
+                                            <a href="tel:+233552088069" className="font-medium text-gray-800">055 208 8069</a>
                                         </li>
                                         <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                                             <Mail className="w-5 h-5 mr-3 text-orange-500" /> 

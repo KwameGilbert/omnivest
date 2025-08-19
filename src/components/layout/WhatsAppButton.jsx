@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
-const WhatsAppButton = ({ phoneNumber = '+233541436414' }) => {
+// phoneNumber should be passed without the leading '+' for wa.me links.
+const WhatsAppButton = ({ phoneNumber = '233552088069' }) => {
   const [isHovered, setIsHovered] = useState(false);
   // Construct the WhatsApp link with the provided phone number.
   // The '233' is Ghana's country code, used as the default example.

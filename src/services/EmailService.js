@@ -103,7 +103,7 @@ const EmailService = {
       <p>We have received your inquiry and our team will review your message promptly. 
       Someone will get back to you within 24-48 business hours.</p>
       
-      <p>If you have any urgent questions, please feel free to call us at +233 XX XXX XXXX.</p>
+    <p>If you have any urgent questions, please feel free to call us at 055 208 8069.</p>
       
       <p>Best regards,<br>The OmniVest Education Consult Team</p>
     `;
@@ -271,7 +271,7 @@ const EmailService = {
           
           <p>Our team will review your requested time and confirm the appointment shortly. You will receive a calendar invitation with the final confirmation and meeting details.</p>
           
-          <p>If you need to reschedule or have any questions before your consultation, please contact us at +233 XX XXX XXXX or reply to this email.</p>
+          <p>If you need to reschedule or have any questions before your consultation, please contact us at 055 208 8069 or reply to this email.</p>
           
           <p>We look forward to speaking with you!</p>
           
