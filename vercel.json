@@ -2,10 +2,9 @@
   "version": 2,
    "routes":[{
     "src": "/(.*)",
-    "dest": "./index.html"
+    "dest": "./"
     }],
-    "rewrite":[{
-      "source": "/**",
-      "destination": "/index.html"
-    }]
+    "rewrites": [
+    {"source": "/(.*)", "destination": "/" }
+    ]
 }
