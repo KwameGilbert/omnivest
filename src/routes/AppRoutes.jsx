@@ -15,8 +15,8 @@ const AppRoutes = () => {
     return (
         <Routes>
             {/* Main routes */}
-            <Route index element={<Homepage />} />
             <Route path="/" element={<Homepage />} />
+            <Route path="/home" element={<Homepage />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/packages" element={<Packages />} />
@@ -28,7 +28,7 @@ const AppRoutes = () => {
             <Route path="/booking" element={<Booking />} />
             
             {/* Use a dedicated route for 404 Not Found pages */}
-            <Route path="*" element={<Homepage />} />
+            {/* <Route path="*" element={<Homepage />} /> */}
         </Routes>
     );
 };

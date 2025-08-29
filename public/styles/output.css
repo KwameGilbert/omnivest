@@ -677,9 +677,6 @@
   .max-w-md {
     max-width: var(--container-md);
   }
-  .max-w-xl {
-    max-width: var(--container-xl);
-  }
   .flex-1 {
     flex: 1;
   }
@@ -1508,9 +1505,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
   .text-\[\#25D366\] {
     color: #25D366;
   }
@@ -1650,9 +1644,6 @@
   }
   .opacity-20 {
     opacity: 20%;
-  }
-  .opacity-80 {
-    opacity: 80%;
   }
   .opacity-90 {
     opacity: 90%;

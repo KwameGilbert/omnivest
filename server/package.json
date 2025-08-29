@@ -2,10 +2,9 @@
   "name": "omnivest-email-api",
   "version": "1.0.0",
   "description": "Simple email API for OmniVest",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node server",
-    "build-client": "cd ./client/ && npm run build && cd ..",
     "dev": "nodemon server"
   },
   "dependencies": {

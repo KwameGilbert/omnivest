@@ -166,7 +166,6 @@ const EmailService = {
         try {
             // Send notification to admin
             const adminEmailResult = await EmailService.sendContactFormNotification(formData);
-
             // Send thank you email to user
             const userEmailResult = await EmailService.sendUserThankYouEmail(formData);
 
