@@ -113,17 +113,19 @@ const HeroBanner = () => {
         </AnimatePresence>
         {/* Light Overlay for better text readability */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, rgba(243, 244, 246, 0.5) 0%, rgba(245, 158, 11, 0.2) 50%, rgba(243, 244, 246, 0.5) 100%)'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.88) 50%, rgba(255,255,255,0.97) 100%)',
+          mixBlendMode: 'normal'
         }}></div>
       </div>
 
       {/* Content Section */}
-      <div className="container mx-auto px-4 relative z-10 py-20 text-center">
+  <div className="container mx-auto px-4 relative z-10 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto space-y-6"
+          style={{ color: '#000', textShadow: '0 4px 16px rgba(0,0,0,0.35), 0 1px 0 #fff' }}
         >
           {/* Dynamic Heading with Gradient */}
           <motion.h1
@@ -162,7 +164,7 @@ const HeroBanner = () => {
               transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
+              className="bg-[#f59e0b] text-[#ffffff] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
             >
               <Link to="/booking" className="w-full h-full flex items-center justify-center">
                 Book Consultation
@@ -176,7 +178,7 @@ const HeroBanner = () => {
               transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(17, 24, 39, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-[#111827] bg-transparent text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#f3f4f6] hover:border-[#f59e0b] transition-all"
+              className="border-2 border-[#111827] bg-transparent text-[#f8f8f8] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#f3f4f6] hover:border-[#f59e0b] transition-all"
             >
               <Link to="/services" className="w-full h-full flex items-center justify-center gap-2">
                 Learn more <ArrowRight className="w-4 h-4 text-current" />
