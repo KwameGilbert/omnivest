@@ -17,7 +17,7 @@ const Homepage = () => {
             <BriefAbout />
             <ServicesPreview />
             <WhyStudyAbroad />         
-            <TestimonialCarousel />
+            {/* <TestimonialCarousel /> */}
             <FAQSection />
             {/* <CallToAction /> */}
             <ContactPopup />

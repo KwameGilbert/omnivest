@@ -6,23 +6,8 @@ import Typed from 'typed.js';
 
 const HeroBanner = () => {
   const typedRef = useRef(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  const backgroundImages = [
-    {
-      url: "/images/ominivest.png",
-      alt: "University Building"
-    },
-    {
-      url: "/images/student_abroad.jpg",
-      alt: "Students studying together"
-    },
-    {
-      url: "/images/university.avif",
-      alt: "University campus"
-    }
-  ];
+  const videoRef = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -46,96 +31,103 @@ const HeroBanner = () => {
   }, []);
 
   useEffect(() => {
-    let loadedCount = 0;
-    const totalImages = backgroundImages.length;
+    if (videoRef.current) {
+      videoRef.current.addEventListener('loadeddata', () => {
+        setVideoLoaded(true);
+      });
+    }
+  }, []);
 
-    const handleImageLoad = () => {
-      loadedCount += 1;
-      if (loadedCount === totalImages) {
-        setImagesLoaded(true);
-      }
-    };
+  // Array of background videos
+  const backgroundVideos = [
+    "https://assets.mixkit.co/videos/4519/4519-720.mp4",
+    "https://video-previews.elements.envatousercontent.com/files/9e170847-97cd-404d-96f3-44956e9d344a/video_preview_h264.mp4",
+    "https://assets.mixkit.co/videos/4386/4386-720.mp4"
+  ];
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const [fade, setFade] = useState(true);
 
-    backgroundImages.forEach(image => {
-      const img = new Image();
-      img.src = image.url;
-      img.onload = handleImageLoad;
-      img.onerror = () => {
-        console.error(`Failed to load image: ${image.url}`);
-        loadedCount += 1;
-        if (loadedCount === totalImages) {
-          setImagesLoaded(true);
-        }
-      };
-    });
-  }, [backgroundImages]);
-
+  // Handle video change every 10 seconds
   useEffect(() => {
-    if (!imagesLoaded) return;
+    setFade(false); // Start fade out
+    const timeout = setTimeout(() => {
+      setCurrentVideo((prev) => (prev + 1) % backgroundVideos.length);
+      setFade(true); // Fade in new video
+    }, 1000); // Fade out duration
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 7500);
+      setFade(false);
+      setTimeout(() => {
+        setCurrentVideo((prev) => (prev + 1) % backgroundVideos.length);
+        setFade(true);
+      }, 1000);
+    }, 10000); // Change video every 10 seconds
 
-    return () => clearInterval(interval);
-  }, [imagesLoaded, backgroundImages.length]);
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, []);
+
+  // Reset videoLoaded on video change
+  useEffect(() => {
+    setVideoLoaded(false);
+  }, [currentVideo]);
 
   return (
     <section className="relative bg-[#f3f4f6] text-[#111827] min-h-[80vh] flex items-center overflow-hidden font-['Inter']">
-      {/* Background Images with Light Overlay */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence>
-          {imagesLoaded && backgroundImages.map((image, index) => (
-            index === currentImageIndex && (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0.2, scale: 1, x: 0, y: 0 }}
-                animate={{ opacity: 1, scale: 1.3, x: [0, -10, 0], y: [0, 5, 0] }}
-                exit={{ opacity: 0.0, scale: 1.0 }}
-                transition={{
-                  opacity: { duration: 2 },
-                  scale: { duration: 8, ease: "easeInOut" },
-                  x: { duration: 8, ease: "easeInOut" },
-                  y: { duration: 8, ease: "easeInOut" },
-                }}
-                className="absolute inset-0 overflow-hidden"
-              >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-full object-cover object-center"
-                />
-              </motion.div>
-            )
-          ))}
-        </AnimatePresence>
-        {/* Light Overlay for better text readability */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.88) 50%, rgba(255,255,255,0.97) 100%)',
-          mixBlendMode: 'normal'
-        }}></div>
+        <video
+          key={currentVideo}
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          // poster="/images/university.avif"
+          style={{
+            opacity: videoLoaded && fade ? 1 : 0,
+            transition: 'opacity 1s ease-in-out'
+          }}
+          onLoadedData={() => setVideoLoaded(true)}
+        >
+          <source src={backgroundVideos[currentVideo]} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {(() => {
+          const overlayOpacity = 0.6;
+          const overlayColor = '255,255,255';
+          return (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `linear-gradient(135deg, rgba(${overlayColor},${overlayOpacity + 0.04}) 0%, rgba(${overlayColor},${overlayOpacity}) 50%, rgba(${overlayColor},${overlayOpacity + 0.05}) 100%)`,
+                mixBlendMode: 'normal'
+              }}
+            ></div>
+          );
+        })()}
       </div>
 
-      {/* Content Section */}
-  <div className="container mx-auto px-4 relative z-10 py-20 text-center">
+     {/* Content Section */}
+      <div className="container mx-auto px-4 relative z-10 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto space-y-6"
-          style={{ color: '#000', textShadow: '0 4px 16px rgba(0,0,0,0.35), 0 1px 0 #fff' }}
+          style={{ color: '#000', textShadow: '0 2px 8px rgba(255,255,255,0.7), 0 1px 3px rgba(0,0,0,0.2)' }}
         >
           {/* Dynamic Heading with Gradient */}
           <motion.h1
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            className="text-4xl lg:text-4xl font-bold leading-tight h-[4.5rem]"
+            className="text-4xl lg:text-5xl font-bold leading-tight h-[4.5rem]"
           >
-            {/* Text uses gradient from primary-dark to accent-yellow */}
-            <span ref={typedRef} className="text-transparent bg-clip-text bg-[#111827]"></span>
+            <span ref={typedRef} className="text-[#000000] font-bold"></span>
           </motion.h1>
 
           {/* Descriptive Paragraph */}
@@ -143,7 +135,7 @@ const HeroBanner = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.3, type: "spring", damping: 10 }}
-            className="text-md md:text-lg text-[#111827] leading-relaxed max-w-2xl mx-auto"
+            className="text-md md:text-lg text-[#000000] font-medium leading-relaxed max-w-2xl mx-auto"
           >
             Omnivest guides the brightest minds to world-class universities and elite destinations.
             We're dedicated to helping students access premier education opportunities
@@ -164,7 +156,7 @@ const HeroBanner = () => {
               transition={{ duration: 0.8, delay: 0.7, type: "spring" }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#f59e0b] text-[#ffffff] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#f59e0b] hover:text-[#f3f4f6] border-2 border-[#f59e0b]"
+              className="bg-[#f59e0b] text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-[#e68a00] hover:text-[#000000] border-2 border-[#f59e0b]"
             >
               <Link to="/booking" className="w-full h-full flex items-center justify-center">
                 Book Consultation
@@ -178,7 +170,7 @@ const HeroBanner = () => {
               transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(17, 24, 39, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-[#111827] bg-transparent text-[#f8f8f8] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#f3f4f6] hover:border-[#f59e0b] transition-all"
+              className="border-2 border-[#111827] bg-transparent text-[#111827] px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#f59e0b] hover:text-[#111827] hover:border-[#f59e0b] transition-all"
             >
               <Link to="/services" className="w-full h-full flex items-center justify-center gap-2">
                 Learn more <ArrowRight className="w-4 h-4 text-current" />
