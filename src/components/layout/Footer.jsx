@@ -43,9 +43,20 @@ const Footer = () => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-2xl font-bold text-gradient bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent mb-4">
+                        {/* Logo */}
+                        <div>
+                            <Link to="/" className="inline-block">
+                                <img 
+                                    src="/images/logo.png" 
+                                    alt="Omnivest Logo" 
+                                    className="h-16"
+                                />
+                            </Link>
+                        </div>
+                        
+                        {/* <h3 className="text-2xl font-bold text-gradient bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent mb-4">
                             Omnivest
-                        </h3>
+                        </h3> */}
                         <p className="text-gray-300 mb-6 leading-relaxed">
                             Your trusted partner for international education and investment opportunities. 
                             We help students achieve their dreams of studying abroad.

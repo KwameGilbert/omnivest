@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
     return (
         <div className="flex flex-col min-h-screen bg-white text-gray-800 overflow-x-hidden">
             <Navbar />
-            <main className="flex-grow pt-22">
+            <main className="flex-grow pt-[80px]">
                 {children}
             </main>
             <WhatsAppButton />

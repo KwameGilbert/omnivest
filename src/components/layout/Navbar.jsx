@@ -31,7 +31,7 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <img
-                    src="/images/omnivest_logo.png"
+                    src="/images/omnivest_favicon.png"
                     alt="Omnivest Logo"
                     className="w-10 h-10 object-contain"
                     onError={() => setLogoError(true)}
