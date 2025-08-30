@@ -43,7 +43,7 @@ const faqs = [
     q: 'Who can I contact for more help?',
     a: (
       <>
-        Email us at <a href="mailto:info@omnivest.com" className="text-orange-500 underline">info@omnivest.com</a> or use the contact form on our <Link to="/contact" className="text-orange-500 underline">Contact</Link> page.
+        Email us at <a href="mailto:info@omnivesteduconsult.co.uk" className="text-orange-500 underline">info@omnivesteduconsult.co.uk</a> or use the contact form on our <Link to="/contact" className="text-orange-500 underline">Contact</Link> page.
       </>
     )
   }

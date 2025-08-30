@@ -124,7 +124,7 @@ const PrivacyPolicy = () => {
             If you have questions, requests, or concerns about this policy or our data practices, contact us:
           </p>
           <ul className="list-none text-gray-600">
-            <li>Email: <a className="text-orange-500 underline" href="mailto:hello@omnivest.com">hello@omnivest.com</a></li>
+            <li>Email: <a className="text-orange-500 underline" href="mailto:info@omnivesteduconsult.co.uk">info@omnivesteduconsult.co.uk</a></li>
             <li>Contact form: <Link className="text-orange-500 underline" to="/contact">/contact</Link></li>
             <li>Intake form: <Link className="text-orange-500 underline" to="/study-abroad/intakeform">/study-abroad/intakeform</Link></li>
           </ul>

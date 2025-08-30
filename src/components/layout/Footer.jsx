@@ -157,8 +157,8 @@ const Footer = () => {
                             
                             <div className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-orange-400" />
-                                <a href="mailto:info@omnivest.com" className="text-gray-300 hover:text-orange-400 transition-colors">
-                                    info@omnivest.com
+                                <a href="mailto:info@omnivesteduconsult.co.uk" className="text-gray-300 hover:text-orange-400 transition-colors">
+                                    info@omnivesteduconsult.co.uk
                                 </a>
                             </div>
                         </div>

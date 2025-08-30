@@ -13,7 +13,7 @@ const ContactInfo = () => {
         {
             icon: <Mail className="w-8 h-8" />,
             title: "Email",
-            details: ["info@omnivest.com", "support@omnivest.com"],
+            details: ["info@omnivesteduconsult.co.uk", "admissions@omnivesteduconsult.co.uk"],
             color: "from-green-500 to-green-600"
         },
         {

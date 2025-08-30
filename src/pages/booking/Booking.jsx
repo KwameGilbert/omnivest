@@ -369,7 +369,7 @@ const Booking = () => {
                                         </li>
                                         <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                                             <Mail className="w-5 h-5 mr-3 text-orange-500" /> 
-                                            <span>info@omnivest.com</span>
+                                            <span>info@omnivesteduconsult.co.uk</span>
                                         </li>
                                     </ul>
                                 </div>

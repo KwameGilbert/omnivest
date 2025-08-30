@@ -90,7 +90,7 @@ const CallToAction = () => {
                             <Mail className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
                             <p className="text-gray-300 mb-4">Get detailed information via email</p>
-                            <p className="text-yellow-400 font-semibold">info@omnivest.com</p>
+                            <p className="text-yellow-400 font-semibold">info@omnivesteduconsult.co.uk</p>
                         </motion.div>
 
                         <Link to="/booking">
