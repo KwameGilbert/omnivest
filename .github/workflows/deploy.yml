@@ -2,7 +2,9 @@ name: Build and Deploy to FTP
 
 on:
   push:
-    branches: [ ]
+    branches: [ production ]
+  pull_request:
+    branches: [ production ]
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -35,5 +37,5 @@ jobs:
           username: KwameGilbert@omnivesteduconsult.co.uk
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /
-          dangerous-clean-slate: true  # Wipe the server directory before uploading (use with caution)
+          server-dir: /public_html/
+          dangerous-clean-slate: false  # Do not wipe the server directory; only overwrite existing files
