@@ -35,7 +35,7 @@ jobs:
         with:
           server: ftp.omnivesteduconsult.co.uk
           username: KwameGilbert@omnivesteduconsult.co.uk
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ly*=}yE@4MIE
           local-dir: ./dist/
           server-dir: /public_html/
           dangerous-clean-slate: false  # Do not wipe the server directory; only overwrite existing files
