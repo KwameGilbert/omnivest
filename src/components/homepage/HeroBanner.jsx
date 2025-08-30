@@ -41,11 +41,11 @@ const HeroBanner = () => {
   // Array of background videos
   const backgroundVideos = [
     "/videos/university_dron_view.mp4",
+    "https://video-previews.elements.envatousercontent.com/80a9f384-cefd-4a92-bdde-cceb36188df4/watermarked_preview/watermarked_preview.mp4",
     "https://assets.mixkit.co/videos/4519/4519-720.mp4",
     "https://video-previews.elements.envatousercontent.com/files/9e170847-97cd-404d-96f3-44956e9d344a/video_preview_h264.mp4",
     "https://video-previews.elements.envatousercontent.com/files/0d10bf8d-5c50-4532-a3e6-14bc8a91a38c/video_preview_h264.mp4",
     "https://video-previews.elements.envatousercontent.com/77f74c12-48a9-4540-9f95-232f5170699a/watermarked_preview/watermarked_preview.mp4",
-    "https://video-previews.elements.envatousercontent.com/80a9f384-cefd-4a92-bdde-cceb36188df4/watermarked_preview/watermarked_preview.mp4"
   ];
   const [currentVideo, setCurrentVideo] = useState(0);
   const [fade, setFade] = useState(true);
