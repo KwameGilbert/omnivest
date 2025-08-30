@@ -115,7 +115,7 @@ const HeroBanner = () => {
       </div>
 
      {/* Content Section */}
-      <div className="container mx-auto px-4 relative z-10 py-12 text-center">
+      <div className="container mx-auto px-4 relative z-10 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

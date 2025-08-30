@@ -73,6 +73,7 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-md: 28rem;
+    --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
     --container-4xl: 56rem;
@@ -980,6 +981,9 @@
     border-left-style: var(--tw-border-style);
     border-left-width: 4px;
   }
+  .border-\[\#111827\] {
+    border-color: #111827;
+  }
   .border-\[\#111827\]\/10 {
     border-color: color-mix(in oklab, #111827 10%, transparent);
   }
@@ -1402,6 +1406,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-center {
+    object-position: center;
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1486,6 +1493,33 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-22 {
+    padding-top: calc(var(--spacing) * 22);
+  }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
+  .pt-\[70px\] {
+    padding-top: 70px;
+  }
+  .pt-\[75px\] {
+    padding-top: 75px;
+  }
+  .pt-\[78px\] {
+    padding-top: 78px;
+  }
+  .pt-\[79px\] {
+    padding-top: 79px;
+  }
+  .pt-\[80px\] {
+    padding-top: 80px;
+  }
+  .pt-\[px\] {
+    padding-top: px;
+  }
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
   }
@@ -1563,6 +1597,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-\[\#000000\] {
+    color: #000000;
   }
   .text-\[\#25D366\] {
     color: #25D366;
@@ -1958,6 +1995,20 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-yellow-50);
+      }
+    }
+  }
+  .hover\:text-\[\#000000\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #000000;
+      }
+    }
+  }
+  .hover\:text-\[\#111827\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #111827;
       }
     }
   }

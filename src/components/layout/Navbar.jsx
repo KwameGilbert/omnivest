@@ -16,7 +16,7 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
       // Navbar background: Harmony Light, Text: Harmony Dark
       // Subtle border for definition
-      className="bg-[#f3f4f6] text-[#111827] shadow-lg backdrop-blur-lg border-b border-[#111827]/10"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#f3f4f6]/95 text-[#111827] shadow-lg backdrop-blur-lg border-b border-[#111827]/10"
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">

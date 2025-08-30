@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import MainLayout from './components/ui/MainLayout';
 import AppRoutes from './routes/AppRoutes';
+import ScrollToTop from './components/common/ScrollToTop';
 
 const App = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <MainLayout>
                 <AppRoutes />
             </MainLayout>
