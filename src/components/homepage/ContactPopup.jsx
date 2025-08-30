@@ -4,7 +4,7 @@ import { X, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import EmailService from '../../services/EmailService';
 
-const ContactPopup = ({ showDelay = 9000 }) => {
+const ContactPopup = ({ showDelay = 60000 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
