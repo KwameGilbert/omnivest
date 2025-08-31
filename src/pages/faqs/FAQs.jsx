@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../../components/common/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -85,6 +86,12 @@ const faqs = [
 const FAQs = () => {
   return (
     <section className="min-h-screen bg-gray-50 py-12 px-4">
+      <SEO
+        title="Frequently Asked Questions | Omnivest Educational Consult"
+        description="Find answers to common questions about Omnivest's education services, application process, fees, and support for international students."
+        keywords="education FAQs, study abroad questions, university application FAQ, student visa questions, education consultant FAQ, international student help"
+        canonical="https://omnivesteduconsult.co.uk/faqs"
+      />
       <div className="container mx-auto max-w-4xl">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h1>

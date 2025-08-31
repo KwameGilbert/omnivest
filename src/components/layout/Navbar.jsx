@@ -38,13 +38,13 @@ const Navbar = () => {
                   />
                 )}
                 <div className="flex flex-col">
-                  <h1 className="text-xl font-bold">
+                  <p className="text-xl font-bold">
                     {/* "Omni" in primary text color, "vest" with a vibrant gradient */}
                     <span className="text-[#111827]">Omni</span>
                     <span className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] bg-clip-text text-transparent">
                       vest 
                     </span> Educational Consult
-                  </h1>
+                  </p>
                   {/* Tagline in a slightly muted primary text color */}
                   <p className="text-xs text-[#111827]/70 italic">Your Journey, Our Mission</p>
                 </div>

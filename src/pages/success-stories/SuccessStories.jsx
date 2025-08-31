@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import SEO from '../../components/common/SEO';
 import successStories from '../../data/successStoriesData';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
@@ -28,15 +29,12 @@ const SuccessStories = () => {
 
   // Update document title & meta description and inject JSON-LD for reviews
   useEffect(() => {
-    const prevTitle = document.title;
-    document.title = `Success Stories · Omnivest`;
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
       meta.name = 'description';
       document.head.appendChild(meta);
     }
-    meta.content = 'Read success stories from students Omnivest has helped — testimonials, ratings and supporting documents.';
 
     // JSON-LD
     const ld = {
@@ -115,6 +113,12 @@ const SuccessStories = () => {
 
   return (
     <section className="min-h-screen bg-gray-50 py-12 px-4">
+      <SEO
+        title="Success Stories | Omnivest Educational Consult"
+        description="Read success stories from students Omnivest has helped achieve their international education dreams with testimonials, ratings, and real results."
+        keywords="student success stories, study abroad testimonials, international student achievements, university application success, education consultant results, student testimonials"
+        canonical="https://omnivesteduconsult.co.uk/success-stories"
+      />
       <div className="container mx-auto max-w-6xl">
         <motion.h1 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold mb-6">Success Stories</motion.h1>
 

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import SEO from '../../components/common/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -60,7 +61,7 @@ const IntakeForm = () => {
   const [form, setForm] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-
+  
   const filledFields = useMemo(() => {
     return Object.values(form).filter(value => {
       if (Array.isArray(value)) return value.length > 0;
@@ -113,6 +114,12 @@ const IntakeForm = () => {
 
   return (
     <section className="min-h-screen bg-gray-50 py-6 md:py-12 px-4">
+      <SEO
+        title="Study Abroad Application | Omnivest Educational Consult"
+        description="Apply for study abroad programs with Omnivest. Complete our intake form to start your journey to international education at top universities worldwide."
+        keywords="study abroad application, student intake form, international university application, education abroad form, university admissions form, study visa application"
+        canonical="https://omnivesteduconsult.co.uk/intake-form"
+      />
       <div className="container mx-auto max-w-4xl">
         <Link to="/" className="inline-flex items-center mb-6 text-orange-500 hover:text-orange-600 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-1" />

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../../components/common/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, User, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -87,6 +88,12 @@ const Booking = () => {
 
     return (
         <section className="min-h-screen bg-gradient-to-b from-orange-50 to-white py-16 md:py-24">
+            <SEO
+                title="Book a Consultation | Omnivest Educational Consult"
+                description="Schedule a free consultation with Omnivest's education experts to discuss your study abroad goals and get personalized advice on university applications."
+                keywords="book consultation, free education consultation, study abroad advice, university application help, education counseling, student visa consultation, university admission consultation"
+                canonical="https://omnivesteduconsult.co.uk/booking"
+            />
             <div className="container mx-auto px-4">
                 <div className="max-w-5xl mx-auto">
                     <motion.div

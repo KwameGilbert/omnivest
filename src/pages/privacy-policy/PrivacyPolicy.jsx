@@ -1,9 +1,16 @@
 import React from 'react';
+import SEO from '../../components/common/SEO';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
   return (
     <main className="min-h-screen bg-gray-50 py-12 px-4">
+      <SEO
+        title="Privacy Policy | Omnivest Educational Consult"
+        description="Read Omnivest Educational Consult's privacy policy to understand how we collect, use, and protect your personal information when using our services."
+        keywords="privacy policy, data protection, student privacy, education consultancy privacy, GDPR compliance, data security, information protection"
+        canonical="https://omnivesteduconsult.co.uk/privacy-policy"
+      />
       <div className="container mx-auto max-w-4xl bg-white rounded-2xl shadow p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
         <p className="text-gray-600 mb-6">

@@ -1,3 +1,4 @@
+import SEO from '../../components/common/SEO';
 import HeroBanner from './../../components/homepage/HeroBanner';
 import BriefAbout from './../../components/homepage/BriefAbout';
 import WhyStudyAbroad from './../../components/homepage/WhyStudyAbroad';
@@ -13,6 +14,12 @@ import CallToAction from './../../components/homepage/CallToAction';
 const Homepage = () => {
     return (
         <div className="min-h-screen bg-gray-50">
+            <SEO 
+                title="Global Education Specialists"
+                description="Omnivest Educational Consult guides students to elite universities worldwide with personalized application support, visa assistance, and academic counseling."
+                keywords="international education, university applications, study abroad, education consultants, academic guidance, student visa, university admission"
+                canonical="/"
+            />
             <HeroBanner />
             <BriefAbout />
             <ServicesPreview />
