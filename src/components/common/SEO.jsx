@@ -20,6 +20,7 @@ const SEO = ({ title, description, keywords, canonical, children }) => {
         {description && <meta name="description" content={description} />}
         {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       {children}
     </>

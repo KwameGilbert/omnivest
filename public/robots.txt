@@ -1,0 +1,3 @@
+# https://omnivesteduconsult.co.uk/robotstxt.html
+User-agent: *
+Disallow:

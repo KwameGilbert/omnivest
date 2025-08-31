@@ -100,7 +100,7 @@ const HeroBanner = () => {
           Your browser does not support the video tag.
         </video>
         {(() => {
-          const overlayOpacity = 0.50;
+          const overlayOpacity = 0.40;
           const overlayColor = '0,0,0';
           return (
             <div
