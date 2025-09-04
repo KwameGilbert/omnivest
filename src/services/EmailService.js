@@ -16,7 +16,8 @@ const ADMIN_EMAIL = config.ADMIN_EMAIL;
  */
 const sendEmail = async (emailData) => {
     try {
-        const response = await fetch(`${API_URL}/send-mail`, {
+        // const response = await fetch(`${API_URL}/send-mail`, {
+        const response = await fetch(`${API_URL}/send-mail.php`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

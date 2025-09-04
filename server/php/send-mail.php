@@ -11,11 +11,11 @@ use PHPMailer\PHPMailer\Exception;
 // Use a configuration array to manage your settings.
 // These values have been updated with your provided information.
 $config = [
-    "SMTP_HOST" => 'smtp.gmail.com', // Corrected host for Gmail
-    "SMTP_USERNAME" => 'kwamegilbert1114@gmail.com', // Your Gmail address
-    "SMTP_PASSWORD" => 'vowl uaqn dovs dtid', // Your app password
+    "SMTP_HOST" => 'smtp.gmail.com', 
+    "SMTP_USERNAME" => 'kwamegilbert1114@gmail.com', 
+    "SMTP_PASSWORD" => 'qktd stfe odof rfsh', 
     "SMTP_PORT"     => 587,
-    "SMTP_SECURE"   => 'tls', // Corrected syntax here
+    "SMTP_SECURE"   => 'tls',
     "FROM_EMAIL"    => 'kwamegilbert1114@gmail.com',
     "FROM_NAME"     => 'OmniVest Education Consult'
 ];
@@ -29,7 +29,37 @@ $smtpSecure   = $config["SMTP_SECURE"];
 $fromEmail    = $config["FROM_EMAIL"];
 $fromName     = $config["FROM_NAME"];
 
-// Check for POST request to act like an API endpoint
+// --- CORS handling ---
+// Allowed origins — adjust as needed for your environments
+$allowedOrigins = [
+    'https://omnivesteduconsult.co.uk',
+    'http://localhost:5173',
+    'http://localhost:3000'
+];
+
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+if (in_array($origin, $allowedOrigins, true)) {
+    header("Access-Control-Allow-Origin: $origin");
+} else {
+    // Fallback to a safe default; change to '*' only if you understand the risks
+    header('Access-Control-Allow-Origin: https://omnivesteduconsult.co.uk');
+}
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+header('Vary: Origin');
+header('Content-Type: application/json; charset=utf-8');
+
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Return early for preflight checks
+    http_response_code(200);
+    echo json_encode(['success' => true, 'message' => 'OK']);
+    exit;
+}
+
+// Only allow POST for sending mail
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); // Method Not Allowed
     echo json_encode(['success' => false, 'message' => 'Method Not Allowed']);
@@ -62,16 +92,26 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = $smtpUsername;
     $mail->Password   = $smtpPassword;
-    $mail->SMTPSecure = $smtpSecure;
+    // $mail->SMTPSecure = $smtpSecure;
     $mail->Port       = $smtpPort;
 
     // --- Recipient and Content Configuration ---
     $mail->setFrom($fromEmail, $fromName);
-    $mail->addAddress($data['to']);
-    $mail->isHTML(isset($data['html']));
+    // Validate recipient email
+    $recipient = filter_var($data['to'], FILTER_VALIDATE_EMAIL) ? $data['to'] : null;
+    if (!$recipient) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Invalid recipient email address']);
+        exit;
+    }
+    $mail->addAddress($recipient);
+
+    $hasHtml = !empty($data['html']);
+    $hasText = !empty($data['text']);
+    $mail->isHTML($hasHtml);
     $mail->Subject = $data['subject'];
-    $mail->Body    = $data['html'] ?? $data['text'];
-    $mail->AltBody = $data['text'] ?? strip_tags($data['html']);
+    $mail->Body    = $hasHtml ? $data['html'] : ($hasText ? $data['text'] : '');
+    $mail->AltBody = $hasText ? $data['text'] : strip_tags($data['html'] ?? '');
 
     // Set reply-to header if provided
     if (!empty($data['replyTo'])) {
