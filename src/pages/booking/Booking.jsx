@@ -91,8 +91,8 @@ const Booking = () => {
             <SEO
                 title="Book a Consultation | Omnivest Educational Consult"
                 description="Schedule a free consultation with Omnivest's education experts to discuss your study abroad goals and get personalized advice on university applications."
-                keywords="book consultation, free education consultation, study abroad advice, university application help, education counseling, student visa consultation, university admission consultation"
-                canonical="https://omnivesteduconsult.co.uk/booking"
+                keywords="book consultation, free education consultation, study abroad advice, university application help, education counseling, student visa consultation, university admission consultation, UK university consultation, USA university consultation, Canada university consultation, IELTS preparation booking, scholarship consultation, visa application appointment, British Council services consultation, IDP services booking"
+                canonical="/booking"
             />
             <div className="container mx-auto px-4">
                 <div className="max-w-5xl mx-auto">

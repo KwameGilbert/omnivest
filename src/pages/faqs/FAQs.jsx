@@ -89,8 +89,8 @@ const FAQs = () => {
       <SEO
         title="Frequently Asked Questions | Omnivest Educational Consult"
         description="Find answers to common questions about Omnivest's education services, application process, fees, and support for international students."
-        keywords="education FAQs, study abroad questions, university application FAQ, student visa questions, education consultant FAQ, international student help"
-        canonical="https://omnivesteduconsult.co.uk/faqs"
+        keywords="education FAQs, study abroad questions, university application FAQ, student visa questions, education consultant FAQ, international student help, UK visa FAQ, USA visa FAQ, Canada visa FAQ, IELTS preparation FAQ, study and work abroad questions, scholarship application questions, British Council services, IDP services, overseas education questions"
+        canonical="/faqs"
       />
       <div className="container mx-auto max-w-4xl">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-8 text-center">

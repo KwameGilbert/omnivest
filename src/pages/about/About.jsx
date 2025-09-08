@@ -12,7 +12,7 @@ const About = () => {
             <SEO 
                 title="About Our Mission and Values"
                 description="Learn about Omnivest Educational Consult's journey, mission, values, and our dedicated team helping students achieve their international education goals."
-                keywords="about omnivest, education consultancy, international education experts, study abroad specialists, education mission statement, omnivest team, education consultants"
+                keywords="about omnivest, education consultancy, international education experts, study abroad specialists, education mission statement, omnivest team, education consultants, British Council partnership, IELTS preparation, IDP partner, study and work abroad consultancy, UK university applications, USA university applications"
                 canonical="/about"
             />
             <AboutHero />

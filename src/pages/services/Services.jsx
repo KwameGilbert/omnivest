@@ -12,7 +12,7 @@ const Services = () => {
       <SEO 
         title="Our Services"
         description="Explore Omnivest's comprehensive education services including university selection, application assistance, visa guidance, and ongoing student support."
-        keywords="education services, university application support, study abroad services, visa assistance, student accommodation, pre-departure preparation, university selection"
+        keywords="education services, university application support, study abroad services, visa assistance, student accommodation, pre-departure preparation, university selection, IELTS preparation, scholarship applications, British Council services, IDP services, Edusol, Excel Plus, come study international, Ace study Abroad, bcie, astolinks, QS, SI-UK, Crizac, jokings educare, globe educational, CHIEF"
         canonical="/services"
       />
       <HeroSection  
