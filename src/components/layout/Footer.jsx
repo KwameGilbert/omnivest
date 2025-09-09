@@ -47,7 +47,7 @@ const Footer = () => {
                         <div>
                             <Link to="/" className="inline-block">
                                 <img 
-                                    src="/images/logo.png" 
+                                    src="/images/omnivest_logo.png" 
                                     alt="Omnivest Logo" 
                                     className="h-16"
                                 />

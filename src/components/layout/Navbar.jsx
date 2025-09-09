@@ -17,42 +17,34 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 bg-[#f3f4f6]/95 text-[#111827] shadow-lg backdrop-blur-lg border-b border-[#111827]/10"
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2.5">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="flex items-center space-x-3">
-                {logoError ? (
-                  // Fallback logo uses a gradient of accent colors
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#f97316] rounded-lg flex items-center justify-center font-bold text-white text-lg">
-                    O
-                  </div>
-                ) : (
-                  <img
-                    src="/images/omnivest_favicon.png"
-                    alt="Omnivest Logo"
-                    className="w-10 h-10 object-contain"
-                    onError={() => setLogoError(true)}
-                  />
-                )}
-                <div className="flex flex-col">
-                  <p className="text-xl font-bold">
-                    {/* "Omni" in primary text color, "vest" with a vibrant gradient */}
-                    <span className="text-[#111827]">Omni</span>
-                    <span className="bg-gradient-to-r from-[#f59e0b] to-[#f97316] bg-clip-text text-transparent">
-                      vest 
-                    </span> Educational Consult
-                  </p>
-                  {/* Tagline in a slightly muted primary text color */}
-                  <p className="text-xs text-[#111827]/70 italic">Your Journey, Our Mission</p>
+          <motion.div whileHover={{ scale: 1.02 }} className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <div className="flex flex-col">
+                <div className="flex items-center">
+                  {logoError ? (
+                    // Fallback logo uses a gradient of accent colors
+                    <div className="h-12 bg-gradient-to-br from-[#8a1538] to-[#f97316] rounded-lg flex items-center px-3 font-bold text-white">
+                      Omnivest
+                    </div>
+                  ) : (
+                    <img
+                      src="/images/omnivest_logo.png"
+                      alt="Omnivest Educational Consult"
+                      className="h-10 md:h-12 object-contain"
+                      onError={() => setLogoError(true)}
+                    />
+                  )}
                 </div>
+                <span className="pl-12.5 pt-[0.120rem] text-xs italic text-[#8a1538] lg:block md:block hidden">Your Journey, Our Mission</span>
               </div>
             </Link>
           </motion.div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center space-x-8 font-medium">
+          {/* Desktop Menu Only */}
+          <ul className="hidden lg:flex items-center space-x-8 font-medium">
             {["Home", "About", "Services", "Packages", "Contact"].map((item, i) => {
               // Handle 'Home' special case for root path
               const path = item.toLowerCase() === 'home' ? '' : item.toLowerCase();
@@ -100,13 +92,13 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile and Tablet Menu Button */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleMenu}
             // Icon color is primary dark, subtle hover background
-            className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-[#111827]/10 transition-colors text-[#111827]"
+            className="lg:hidden focus:outline-none p-2 rounded-lg hover:bg-[#111827]/10 transition-colors text-[#111827]"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -122,8 +114,8 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            // Mobile menu background is light, slightly transparent, with subtle border
-            className="md:hidden bg-[#f3f4f6]/95 border-t border-[#111827]/10"
+            // Mobile and tablet menu background is light, slightly transparent, with subtle border
+            className="lg:hidden bg-[#f3f4f6]/95 border-t border-[#111827]/10"
           >
             <ul className="flex flex-col px-4 py-6 space-y-4 font-medium">
               {["Home", "About", "Services", "Packages", "Contact"].map((item, i) => {
