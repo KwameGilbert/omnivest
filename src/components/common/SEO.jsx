@@ -16,8 +16,7 @@ const SEO = ({
 }) => {
   // Industry-specific keywords provided by the client
   const industryKeywords = [
-    'gilbert','elikplim','kukah','omnivest', 'education consultancy', 'omniveste education', 'scholarship', 
-    'UK', 'USA', 'Canada', 'Visa', 'British Council', 'IELTS', 'IDP', 
+    'gilbert','elikplim','kukah','omnivest','omnivest group','omnivest education', 'education consultancy', 'omnivest education', 'scholarship', 'omnivest educational consult','omnivest education consult','UK', 'USA', 'Canada', 'Visa', 'British Council', 'IELTS', 'IDP', 
     'Edusol', 'Excel Plus', 'come study international', 'Ace study Abroad', 
     'study and work abroad', 'scholarship', 'bcie', 'astolinks', 'QS', 'SI-UK', 
     'Crizac', 'jokings educare', 'globe educational', 'CHIEF', 
