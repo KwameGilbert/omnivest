@@ -15,9 +15,9 @@ const Homepage = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <SEO 
-                title="Home | Omnivest Education Consult"
-                description="Omnivest Education Consult guides students to elite universities worldwide with personalized application support, visa assistance, and academic counseling."
-                keywords="international education, university applications, study abroad UK, study abroad USA, study abroad Canada, education consultants, academic guidance, student visa, university admission, scholarship applications, IELTS preparation, British Council partner, overseas education"
+                title="Home | Omnivest Educational Consult"
+                description="Omnivest Educational Consult guides students to elite universities worldwide with personalized application support, visa assistance, and academic counseling."
+                keywords="omnivest, omnivest educational consult, omnivest group, international education, university applications, study abroad UK, study abroad USA, study abroad Canada, education consultants, academic guidance, student visa, university admission, scholarship applications, IELTS preparation, British Council partner, overseas education"
                 canonical="/"
             />
             <HeroBanner />

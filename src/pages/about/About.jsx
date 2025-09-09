@@ -10,7 +10,7 @@ const About = () => {
     return (
         <div className="min-h-screen bg-gray-100 text-gray-800">
             <SEO 
-                title="About Our Mission and Values"
+                title="About Us | Omnivest Educational Consult"
                 description="Learn about Omnivest Educational Consult's journey, mission, values, and our dedicated team helping students achieve their international education goals."
                 keywords="about omnivest, education consultancy, international education experts, study abroad specialists, education mission statement, omnivest team, education consultants, British Council partnership, IELTS preparation, IDP partner, study and work abroad consultancy, UK university applications, USA university applications"
                 canonical="/about"

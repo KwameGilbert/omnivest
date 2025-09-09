@@ -83,7 +83,54 @@ const faqs = [
   }
 ];
 
+// Helper function to convert JSX to plain text
+const extractTextFromJSX = (jsxElement) => {
+  // If it's a string or number, return directly
+  if (typeof jsxElement === 'string' || typeof jsxElement === 'number') {
+    return jsxElement.toString();
+  }
+  
+  // Handle null or undefined
+  if (jsxElement == null) {
+    return '';
+  }
+  
+  // If it's a React element with children
+  if (jsxElement && typeof jsxElement === 'object') {
+    // Handle React fragments or elements with children
+    if (jsxElement.props && jsxElement.props.children) {
+      // If children is an array, recursively extract text from each child
+      if (Array.isArray(jsxElement.props.children)) {
+        return jsxElement.props.children
+          .map(child => extractTextFromJSX(child))
+          .join(' ');
+      }
+      // If children is a single element
+      return extractTextFromJSX(jsxElement.props.children);
+    }
+  }
+  
+  // Return empty string if none of the above
+  return '';
+};
+
 const FAQs = () => {
+  // Generate FAQ schema from the faqs array
+  const faqSchemaItems = faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": typeof faq.a === 'string' ? faq.a : extractTextFromJSX(faq.a)
+    }
+  }));
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchemaItems
+  };
+
   return (
     <section className="min-h-screen bg-gray-50 py-12 px-4">
       <SEO
@@ -91,7 +138,11 @@ const FAQs = () => {
         description="Find answers to common questions about Omnivest's education services, application process, fees, and support for international students."
         keywords="education FAQs, study abroad questions, university application FAQ, student visa questions, education consultant FAQ, international student help, UK visa FAQ, USA visa FAQ, Canada visa FAQ, IELTS preparation FAQ, study and work abroad questions, scholarship application questions, British Council services, IDP services, overseas education questions"
         canonical="/faqs"
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </SEO>
       <div className="container mx-auto max-w-4xl">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h1>

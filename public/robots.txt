@@ -1,4 +1,6 @@
-# https://omnivesteduconsult.co.uk/robotstxt.html
 User-agent: *
-Allow: *
-Disallow:
+Disallow: 
+Crawl-delay: 5
+Sitemap: https://www.omnivesteduconsult.co.uk/sitemap.txt
+User-agent: Googlebot
+Disallow: 

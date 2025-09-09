@@ -10,7 +10,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Our Services"
+        title="Our Services | Omnivest Educational Consult"
         description="Explore Omnivest's comprehensive education services including university selection, application assistance, visa guidance, and ongoing student support."
         keywords="education services, university application support, study abroad services, visa assistance, student accommodation, pre-departure preparation, university selection, IELTS preparation, scholarship applications, British Council services, IDP services, Edusol, Excel Plus, come study international, Ace study Abroad, bcie, astolinks, QS, SI-UK, Crizac, jokings educare, globe educational, CHIEF"
         canonical="/services"
