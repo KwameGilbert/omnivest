@@ -2,6 +2,7 @@ import React from 'react';
 import SEO from '../../components/common/SEO';
 import ContactHero from '../../components/contact/ContactHero';
 import ContactInfo from '../../components/contact/ContactInfo';
+import Map from '../../components/contact/Map';
 import ContactForm from '../../components/contact/ContactForm';
 
 const Contact = () => {
@@ -16,6 +17,7 @@ const Contact = () => {
             />
             <ContactHero />
             <ContactInfo />
+            <Map />
             <ContactForm />
         </div>
     );

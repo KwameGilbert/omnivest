@@ -585,6 +585,9 @@
   .h-\[8\.5rem\] {
     height: 8.5rem;
   }
+  .h-\[500px\] {
+    height: 500px;
+  }
   .h-full {
     height: 100%;
   }
@@ -596,6 +599,9 @@
   }
   .min-h-\[120px\] {
     min-height: 120px;
+  }
+  .min-h-\[400px\] {
+    min-height: 400px;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -1005,6 +1011,9 @@
   }
   .bg-\[\#f3f4f6\]\/95 {
     background-color: color-mix(in oklab, #f3f4f6 95%, transparent);
+  }
+  .bg-\[\#f7fafd\] {
+    background-color: #f7fafd;
   }
   .bg-\[\#f59e0b\] {
     background-color: #f59e0b;
